@@ -1,7 +1,7 @@
 ---
 import Icon from "@components/ui/icons/Icon.astro";
 // Destructure the properties from Astro.props
-const { pageTitle, title = Astro.currentLocale === "fr" ? "Partager" : "Share", } = Astro.props;
+const { pageTitle, title = "Share", } = Astro.props;
 
 // Define TypeScript interface for the properties
 interface Props {
