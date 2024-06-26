@@ -1,31 +1,35 @@
-// An array of links for navigation bar
 const navBarLinks = [
   { name: "Inicio", url: "/" },
   { name: "Solicitud", url: "/solicitud" },
+  { name: "Nosotros", url: "/nosotros" },
   { name: "Calculadora", url: "/calculadora" },
   { name: "Contacto", url: "/contacto" },
 ];
-// An array of links for footer
+
 const footerLinks = [
   {
-    section: "Ecosystem",
+    section: "Redes Sociales",
     links: [
-      { name: "Documentation", url: "/welcome-to-docs/" },
-      { name: "Tools & Equipment", url: "/products" },
-      { name: "Construction Services", url: "/services" },
+      { name: "facebookFooter", url: "https://www.facebook.com/" },
+      { name: "xFooter", url: "https://twitter.com/" },
+      {
+        name: "githubFooter",
+        url: "https://github.com/mearashadowfax/ScrewFast",
+      },
+      { name: "googleFooter", url: "https://www.google.com/" },
+      { name: "slackFooter", url: "https://slack.com/" },
     ],
   },
   {
-    section: "Company",
+    section: "Servicios",
     links: [
-      { name: "About us", url: "#" },
-      { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      { name: "Sobre Nosotros", url: "/nosotros" },
+      { name: "Calculadora", url: "/calculadora" },
+      { name: "Solicitud", url: "/solicitud" },
     ],
   },
 ];
-// An object of links for social icons
+
 const socialLinks = {
   facebook: "https://www.facebook.com/",
   x: "https://twitter.com/",
