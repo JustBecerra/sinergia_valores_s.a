@@ -3,17 +3,13 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
-import ClientsSection from "@components/sections/landing/ClientsSection.astro";
-import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/FAQ.astro";
-import heroImage from "@images/hero-image.avif";
+import heroImage from "@images/imagen_llaves.png";
 import faqs from "@data/faqs.json";
-import features from "@data/features.json";
 import pricing from "@data/pricing.json";
-import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
@@ -27,15 +23,14 @@ const avatarSrcs: Array<string> = [
 ---
 
 <MainLayout>
-
   <HeroSection
-    title=`Equip Your Projects with <span
-        class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>`
-    subTitle="Top-quality hardware tools and expert construction services for every project need."
-    primaryBtn="Start Exploring"
-    primaryBtnURL="/products"
-    secondaryBtn="Contact Sales Team"
-    secondaryBtnURL="/contact"
+    title=`El puente hacia tu nuevo hogar <span
+        class="text-yellow-500 dark:text-yellow-400">Sinergia Valores</span>`
+    subTitle="Garantiza tu futuro hogar en segundos - Solicita una fianza con nosotros."
+    primaryBtn="Solicita tu fianza"
+    primaryBtnURL="/solicitud"
+    secondaryBtn="Calcula costos"
+    secondaryBtnURL="/contacto"
     withReview={true}
     avatars={avatarSrcs}
     rating=`<span class="font-bold">4.8</span> / 5`
@@ -43,19 +38,6 @@ const avatarSrcs: Array<string> = [
     reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
     src={heroImage}
     alt="Stack of ScrewFast product boxes containing assorted hardware tools"
-  />
-
-  <ClientsSection
-    title="Trusted by Industry Leaders"
-    subTitle="Experience the reliability chosen by industry giants."
-  />
-
-  <FeaturesGeneral
-    title="Meeting Industry Demands"
-    subTitle="At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals."
-    src={featureImage}
-    alt="ScrewFast products in floating boxes"
-    features={features}
   />
 
   <FeaturesNavs
@@ -107,18 +89,15 @@ const avatarSrcs: Array<string> = [
     statistics={[
       {
         count: "70k+",
-        description:
-          "customers equipped — from DIY to major construction firms",
+        description: "customers equipped — from DIY to major construction firms",
       },
       {
         count: "35%",
-        description:
-          "uptick in project efficiency with ScrewFast tools and services",
+        description: "uptick in project efficiency with ScrewFast tools and services",
       },
       {
         count: "15.3%",
-        description:
-          "reduction in maintenance costs reported by long-term clients",
+        description: "reduction in maintenance costs reported by long-term clients",
       },
       {
         count: "2x",
