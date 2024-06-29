@@ -30,6 +30,8 @@ const footerLinks = [
   },
 ];
 
+const whatsappNumber = "(0800) 1111-1111";
+
 const socialLinks = {
   facebook: "https://www.facebook.com/",
   x: "https://twitter.com/",
@@ -42,4 +44,5 @@ export default {
   navBarLinks,
   footerLinks,
   socialLinks,
+  whatsappNumber,
 };
