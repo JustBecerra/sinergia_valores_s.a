@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 import colors from "tailwindcss/colors";
 export default {
   content: [
@@ -36,6 +37,10 @@ export default {
       zinc: colors.zinc, // Used mainly for box-shadow
     },
     extend: {},
+  },
+  fontFamily: {
+    gotham: ["Gotham", "sans-serif"],
+    corporative: ["Corporative", "sans-serif"],
   },
   plugins: [
     require("tailwindcss/nesting"),
