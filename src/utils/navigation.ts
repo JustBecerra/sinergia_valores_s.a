@@ -30,7 +30,10 @@ const footerLinks = [
   },
 ];
 
-const whatsappNumber = "(0800) 1111-1111";
+const whatsappInfo = {
+  PhoneNumber: "+542215586429",
+  Message: `Hola, me estoy comunicando del sitio web de Sinergia valores para hacer una consulta.`,
+};
 
 const socialLinks = {
   facebook: "https://www.facebook.com/",
@@ -44,5 +47,5 @@ export default {
   navBarLinks,
   footerLinks,
   socialLinks,
-  whatsappNumber,
+  whatsappInfo,
 };
