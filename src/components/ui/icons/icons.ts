@@ -94,7 +94,7 @@ export const Icons = {
       },
     ],
     class:
-      "mt-2 h-6 w-6 flex-shrink-0 fill-neutral-700 hs-tab-active:fill-orange-400 dark:fill-neutral-300 dark:hs-tab-active:fill-orange-300 md:h-7 md:w-7",
+      "mt-2 h-6 w-6 flex-shrink-0 fill-blue-50 hs-tab-active:fill-blue-50 dark:fill-yellow-500 dark:hs-tab-active:fill-yellow-500 md:h-7 md:w-7",
     width: 48,
     height: 48,
     viewBox: "0 -960 960 960",
@@ -106,7 +106,7 @@ export const Icons = {
       },
     ],
     class:
-      "mt-2 h-6 w-6 flex-shrink-0 fill-neutral-700 hs-tab-active:fill-orange-400 dark:fill-neutral-300 dark:hs-tab-active:fill-orange-300 md:h-7 md:w-7",
+      "mt-2 h-6 w-6 flex-shrink-0 fill-blue-50 hs-tab-active:fill-blue-50 dark:fill-yellow-500 dark:hs-tab-active:fill-yellow-500 md:h-7 md:w-7",
     width: 48,
     height: 48,
     viewBox: "0 -960 960 960",
@@ -118,7 +118,7 @@ export const Icons = {
       },
     ],
     class:
-      "h-6 w-6 flex-shrink-0 text-neutral-700 hs-tab-active:text-orange-400 dark:text-neutral-300 dark:hs-tab-active:text-orange-300 md:h-7 md:w-7",
+      "h-6 w-6 flex-shrink-0 text-blue-50 hs-tab-active:text-blue-50 dark:text-yellow-500 dark:hs-tab-active:text-yellow-500 md:h-7 md:w-7",
     width: 24,
     height: 24,
     viewBox: "0 0 24 24",
