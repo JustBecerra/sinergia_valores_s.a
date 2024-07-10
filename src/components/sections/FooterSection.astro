@@ -27,7 +27,7 @@ const sectionThreeTitle: string = "Contactanos";
                 <li>
                   <a
                     href={link.url}
-                    class={`inline-flex gap-x-2 text-nowrap rounded-lg text-neutral-600 outline-none ring-zinc-500 transition duration-300 hover:text-yellow-400 focus-visible:ring dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-300 dark:hover:text-yellow-400 dark:focus:outline-none`}
+                    class={`inline-flex gap-x-2 text-nowrap rounded-lg text-neutral-600 outline-none ring-zinc-500 transition duration-300 hover:text-blue-50 focus-visible:ring dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-yellow-400 dark:focus:outline-none`}
                   >
                     {section.section === "Servicios" ? link.name : <Icon name={link.name} />}
                   </a>
@@ -38,10 +38,10 @@ const sectionThreeTitle: string = "Contactanos";
         ))
       }
 
-      <div class="col-span-1 flex items-center justify-center">
+      <div class="col-span-1 flex w-fit items-center justify-center rounded-2xl bg-white px-2 dark:bg-black">
         <a
           href="/contacto"
-          class="cursor-pointer rounded-lg border-2 border-black p-2 font-bold text-neutral-800 hover:border-yellow-400 hover:text-yellow-400 dark:border-white dark:text-neutral-200 dark:hover:border-yellow-400 dark:hover:text-yellow-400"
+          class="cursor-pointer rounded-lg border-2 border-black p-2 font-bold text-neutral-800 hover:border-blue-50 hover:text-blue-50 dark:border-white dark:text-neutral-200 dark:hover:border-yellow-400 dark:hover:text-yellow-400"
         >
           {sectionThreeTitle}
         </a>

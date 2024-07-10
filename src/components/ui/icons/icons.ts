@@ -5,7 +5,7 @@ export const Icons = {
         d: "M5 19.0793L7.73333 16.4126L5 13.6793L2.33333 16.4126L5 19.0793ZM24.1 18.7459L27 14.0793L29.9333 18.7459H24.1ZM16 16.4126C14.8889 16.4126 13.9444 16.0237 13.1667 15.2459C12.3889 14.4682 12 13.5237 12 12.4126C12 11.2793 12.3889 10.3293 13.1667 9.5626C13.9444 8.79593 14.8889 8.4126 16 8.4126C17.1333 8.4126 18.0833 8.79593 18.85 9.5626C19.6167 10.3293 20 11.2793 20 12.4126C20 13.5237 19.6167 14.4682 18.85 15.2459C18.0833 16.0237 17.1333 16.4126 16 16.4126ZM16.0117 10.4126C15.4483 10.4126 14.9722 10.6031 14.5833 10.9842C14.1944 11.3653 14 11.8375 14 12.4009C14 12.9643 14.1928 13.4404 14.5784 13.8293C14.9639 14.2182 15.4417 14.4126 16.0117 14.4126C16.5817 14.4126 17.0556 14.2198 17.4333 13.8342C17.8111 13.4487 18 12.9709 18 12.4009C18 11.8309 17.8095 11.357 17.4284 10.9793C17.0473 10.6015 16.5751 10.4126 16.0117 10.4126ZM0 24.4126V22.6459C0 21.769 0.466667 21.0664 1.4 20.5382C2.33333 20.01 3.53776 19.7459 5.01327 19.7459C5.28344 19.7459 5.54322 19.7515 5.7926 19.7626C6.04198 19.7737 6.28889 19.7985 6.53333 19.8368C6.35556 20.2207 6.22222 20.6078 6.13333 20.9982C6.04444 21.3887 6 21.8046 6 22.2459V24.4126H0ZM8 24.4126V22.2459C8 20.8015 8.73889 19.6348 10.2167 18.7459C11.6944 17.857 13.6222 17.4126 16 17.4126C18.4 17.4126 20.3333 17.857 21.8 18.7459C23.2667 19.6348 24 20.8015 24 22.2459V24.4126H8ZM27 19.7459C28.5 19.7459 29.7083 20.01 30.625 20.5382C31.5417 21.0664 32 21.769 32 22.6459V24.4126H26V22.2459C26 21.8046 25.9611 21.3887 25.8833 20.9982C25.8056 20.6078 25.6778 20.2207 25.5 19.8368C25.7444 19.7985 25.9908 19.7737 26.239 19.7626C26.4873 19.7515 26.741 19.7459 27 19.7459ZM15.9933 19.4126C14.22 19.4126 12.7778 19.6793 11.6667 20.2126C10.5556 20.7459 10 21.4237 10 22.2459V22.4126H22V22.2126C22 21.4126 21.45 20.7459 20.35 20.2126C19.25 19.6793 17.7978 19.4126 15.9933 19.4126Z",
       },
     ],
-    class: "fill-yellow-400 dark:fill-yellow-300",
+    class: "fill-blue-50 dark:fill-yellow-400",
     width: 32,
     height: 33,
     viewBox: "0 0 32 33",
@@ -19,7 +19,7 @@ export const Icons = {
     width: 32,
     height: 33,
     viewBox: "0 0 32 33",
-    class: "fill-yellow-400 dark:fill-yellow-300",
+    class: "fill-blue-50 dark:fill-yellow-400",
   },
   sencillo: {
     paths: [
@@ -30,7 +30,7 @@ export const Icons = {
     width: 32,
     height: 33,
     viewBox: "0 0 32 33",
-    class: "fill-yellow-400 dark:fill-yellow-300",
+    class: "fill-blue-50 dark:fill-yellow-400",
   },
   confiable: {
     paths: [
@@ -41,7 +41,7 @@ export const Icons = {
     width: 32,
     height: 33,
     viewBox: "0 0 32 33",
-    class: "fill-yellow-400 dark:fill-yellow-300",
+    class: "fill-blue-50 dark:fill-yellow-400",
   },
   groups: {
     paths: [
@@ -94,7 +94,7 @@ export const Icons = {
       },
     ],
     class:
-      "mt-2 h-6 w-6 flex-shrink-0 fill-neutral-700 hs-tab-active:fill-orange-400 dark:fill-neutral-300 dark:hs-tab-active:fill-orange-300 md:h-7 md:w-7",
+      "mt-2 h-6 w-6 flex-shrink-0 fill-blue-50 hs-tab-active:fill-blue-50 dark:fill-yellow-500 dark:hs-tab-active:fill-yellow-500 md:h-7 md:w-7",
     width: 48,
     height: 48,
     viewBox: "0 -960 960 960",
@@ -106,7 +106,7 @@ export const Icons = {
       },
     ],
     class:
-      "mt-2 h-6 w-6 flex-shrink-0 fill-neutral-700 hs-tab-active:fill-orange-400 dark:fill-neutral-300 dark:hs-tab-active:fill-orange-300 md:h-7 md:w-7",
+      "mt-2 h-6 w-6 flex-shrink-0 fill-blue-50 hs-tab-active:fill-blue-50 dark:fill-yellow-500 dark:hs-tab-active:fill-yellow-500 md:h-7 md:w-7",
     width: 48,
     height: 48,
     viewBox: "0 -960 960 960",
@@ -118,7 +118,7 @@ export const Icons = {
       },
     ],
     class:
-      "h-6 w-6 flex-shrink-0 text-neutral-700 hs-tab-active:text-orange-400 dark:text-neutral-300 dark:hs-tab-active:text-orange-300 md:h-7 md:w-7",
+      "h-6 w-6 flex-shrink-0 text-blue-50 hs-tab-active:text-blue-50 dark:text-yellow-500 dark:hs-tab-active:text-yellow-500 md:h-7 md:w-7",
     width: 24,
     height: 24,
     viewBox: "0 0 24 24",
