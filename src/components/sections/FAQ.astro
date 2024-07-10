@@ -1,7 +1,8 @@
 ---
 // Import the necessary AccordionItem component and JSON data
 import AccordionItem from "@components/ui/blocks/AccordionItem.astro";
-
+import logopregunta from "@images/logopregunta.png";
+import { Image } from "astro:assets";
 // Define props from Astro
 const { title, faqs } = Astro.props;
 
@@ -25,47 +26,29 @@ const makeId = (base: any, index: any) => `${base}${index + 1}`;
 ---
 
 <!-- Main container that holds all content. Customized for different viewport sizes. -->
-<section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
   <div class="grid gap-10 md:grid-cols-5">
     <div class="md:col-span-2">
-      <div class="max-w-xs">
-        <h2
-          class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
-        >
+      <div class="flex max-w-xs flex-col gap-4">
+        <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">
           <Fragment set:html={title} />
         </h2>
         <p class="mt-1 hidden text-neutral-600 dark:text-neutral-400 md:block">
           {faqs.subTitle}
         </p>
+        <Image src={logopregunta} alt="" draggable={"false"} width={logopregunta.width} height={logopregunta.height} format="png" loading={"eager"} />
       </div>
     </div>
     <!-- FAQ accordion items -->
     <div class="md:col-span-3">
-      <div
-        class="hs-accordion-group divide-y divide-neutral-200 dark:divide-neutral-700"
-      >
+      <div class="hs-accordion-group divide-y divide-neutral-200 dark:divide-neutral-700">
         {
           faqs.faqs.map((question, i) => {
             // Generate ids dynamically for each FAQ accordion item.
-            let id = makeId(
-              "hs-basic-with-title-and-arrow-stretched-heading-",
-              i
-            );
-            let collapseId = makeId(
-              "hs-basic-with-title-and-arrow-stretched-collapse",
-              i
-            );
+            let id = makeId("hs-basic-with-title-and-arrow-stretched-heading-", i);
+            let collapseId = makeId("hs-basic-with-title-and-arrow-stretched-collapse", i);
 
-            return (
-              <AccordionItem
-                {...question}
-                id={id}
-                collapseId={collapseId}
-                first={i === 0}
-              />
-            );
+            return <AccordionItem {...question} id={id} collapseId={collapseId} first={i === 0} />;
           })
         }
       </div>

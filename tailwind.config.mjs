@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import colors, { teal } from "tailwindcss/colors";
+import colors from "tailwindcss/colors";
 export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
@@ -14,6 +14,10 @@ export default {
       white: "#ffffff",
       gray: colors.gray,
       indigo: colors.indigo,
+      blue: {
+        20: "#D9D9D9",
+        50: "#B1D1C6",
+      },
       neutral: colors.neutral, // Used mainly for text color
       yellow: {
         50: "#fefce8",
@@ -37,6 +41,10 @@ export default {
       }, // Used mainly for links and buttons
     },
     extend: {},
+  },
+  fontFamily: {
+    gotham: ["Gotham", "sans-serif"],
+    corporative: ["Corporative", "sans-serif"],
   },
   plugins: [
     require("tailwindcss/nesting"),
