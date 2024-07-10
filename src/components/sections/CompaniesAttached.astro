@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  inmobiliarias: inmobiliariasType[];
+}
+
+interface inmobiliariasType {
+  title: string;
+}
+const { title, inmobiliarias } = Astro.props;
+---
+
+<!-- Main container that holds all content. Customized for different viewport sizes. -->
+<section
+  class="bg-blue-20 mx-auto mb-[12rem] flex max-w-[85rem] flex-col items-center justify-center gap-12 border-4 border-yellow-500 px-4 py-10 dark:bg-white/[.075] sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+  <h2 class="text-pretty text-4xl text-neutral-600 dark:text-neutral-400">{title}</h2>
+  <div class="grid gap-10 md:grid-cols-5">
+    {inmobiliarias.map((inmobiliaria) => <h2 class="text-pretty text-neutral-600 dark:text-neutral-400">{inmobiliaria.title}</h2>)}
+  </div>
+</section>
