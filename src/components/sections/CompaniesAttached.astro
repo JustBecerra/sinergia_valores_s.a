@@ -12,10 +12,19 @@ const { title, inmobiliarias } = Astro.props;
 
 <!-- Main container that holds all content. Customized for different viewport sizes. -->
 <section
-  class="bg-blue-20 mx-auto mb-[12rem] flex max-w-[85rem] flex-col items-center justify-center gap-12 border-4 border-yellow-500 px-4 py-10 dark:bg-white/[.075] sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  class="mx-auto mb-[12rem] flex w-[100rem] max-w-[85rem] flex-col items-center justify-center gap-12 border-4 border-yellow-500 bg-blue-20 px-4 py-10 dark:bg-white/[.075] sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
 >
-  <h2 class="text-pretty text-4xl text-neutral-600 dark:text-neutral-400">{title}</h2>
+  <h2 class="text-center text-4xl text-neutral-600 dark:text-white">{title}</h2>
   <div class="grid gap-10 md:grid-cols-5">
-    {inmobiliarias.map((inmobiliaria) => <h2 class="text-pretty text-neutral-600 dark:text-neutral-400">{inmobiliaria.title}</h2>)}
+    {
+      inmobiliarias.map((inmobiliaria) => (
+        <div class="relative flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-white">
+          <div class="absolute left-2 h-[34px] w-[34px] rounded-full border-4 border-blue-50 bg-white" />
+          <h2 class="ml-[10px] h-fit w-[200px] overflow-hidden text-ellipsis text-nowrap rounded-lg bg-blue-50 px-4 py-1 text-center text-sm text-neutral-600 dark:text-white">
+            {inmobiliaria.title}
+          </h2>
+        </div>
+      ))
+    }
   </div>
 </section>
