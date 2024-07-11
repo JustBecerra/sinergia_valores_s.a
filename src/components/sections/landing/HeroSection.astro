@@ -27,7 +27,9 @@ interface Props {
 ---
 
 <!-- Defining a grid container that holds all the content -->
-<section class="mx-auto mt-6 grid max-w-[85rem] gap-4 px-4 py-14 sm:px-6 md:grid-cols-2 md:items-center md:gap-8 lg:px-8 2xl:max-w-full">
+<section
+  class="mx-auto mt-6 flex max-w-[85rem] flex-col gap-4 px-4 py-14 sm:px-6 md:grid md:grid-cols-2 md:items-center md:gap-8 lg:px-8 2xl:max-w-full"
+>
   <!-- Title and description -->
   <div>
     <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
@@ -43,7 +45,7 @@ interface Props {
     </div>
   </div>
   <!-- Hero Image Section -->
-  <div class="flex w-full justify-end">
+  <div class="flex w-full justify-start md:justify-end">
     <div class="top-12 overflow-hidden rounded-3xl border-4 border-blue-50 dark:border-yellow-500">
       {src && alt && <Image src={src} alt={alt} class="h-[300px] w-[450px]" draggable={"false"} loading={"eager"} format={"png"} />}
     </div>

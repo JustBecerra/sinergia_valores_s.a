@@ -12,10 +12,12 @@ const headerLowerCase = header.charAt(0).toLowerCase() + header.substring(1);
 ---
 
 <li class="-m-0.5 flex flex-col gap-4 p-4 sm:p-8">
-  <h3 class="mb-2 flex items-end gap-x-2 text-3xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-5xl">
-    {header}
+  <div class="flex items-center gap-x-2">
+    <h3 class="flex items-end text-base font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl">
+      {header}
+    </h3>
     <Icon name={headerLowerCase} />
-  </h3>
+  </div>
   <p class="text-sm text-neutral-600 dark:text-neutral-400 sm:text-base">
     {description}
   </p>
