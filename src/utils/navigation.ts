@@ -1,7 +1,7 @@
 const navBarLinks = [
   { name: "Inicio", url: "/" },
   { name: "Solicitud", url: "/solicitud" },
-  { name: "Nosotros", url: "/nosotros" },
+  // { name: "Nosotros", url: "/nosotros" },
   { name: "Calculadora", url: "/calculadora" },
   { name: "Contacto", url: "/contacto" },
 ];
@@ -12,18 +12,18 @@ const footerLinks = [
     links: [
       { name: "facebookFooter", url: "https://www.facebook.com/" },
       { name: "xFooter", url: "https://twitter.com/" },
-      {
-        name: "githubFooter",
-        url: "https://github.com/mearashadowfax/ScrewFast",
-      },
-      { name: "googleFooter", url: "https://www.google.com/" },
-      { name: "slackFooter", url: "https://slack.com/" },
+      //{
+      //name: "githubFooter",
+      //url: "https://github.com/mearashadowfax/ScrewFast",
+      //},
+      // { name: "googleFooter", url: "https://www.google.com/" },
+      // { name: "slackFooter", url: "https://slack.com/" },
     ],
   },
   {
     section: "Servicios",
     links: [
-      { name: "Sobre Nosotros", url: "/nosotros" },
+      // { name: "Sobre Nosotros", url: "/nosotros" },
       { name: "Calculadora", url: "/calculadora" },
       { name: "Solicitud", url: "/solicitud" },
     ],
