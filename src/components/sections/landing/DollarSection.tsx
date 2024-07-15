@@ -28,11 +28,11 @@ const DollarPrices = () => {
 
     const scroll = () => {
       if (scrollContainer) {
-        scrollContainer!.current!.scrollLeft += 1; // Adjust scroll speed here
+        scrollContainer!.current!.scrollLeft += 1;
       }
     };
 
-    const intervalId = setInterval(scroll, 50); // Adjust interval for smoothness
+    const intervalId = setInterval(scroll, 50);
 
     fetchDollarPrices();
 
