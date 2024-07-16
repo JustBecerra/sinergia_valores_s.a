@@ -8,7 +8,7 @@ interface Props {
   description: string;
 }
 
-const headerLowerCase = header.charAt(0).toLowerCase() + header.substring(1);
+const headerLowerCase = header.split(" ")[0].replace(/[^\w]/g, "").toLocaleLowerCase();
 ---
 
 <li class="-m-0.5 flex flex-col gap-4 p-4 sm:p-8">

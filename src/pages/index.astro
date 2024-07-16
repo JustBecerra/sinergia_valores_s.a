@@ -21,9 +21,9 @@ import DollarSection from "@/components/sections/landing/DollarSection.tsx";
 <MainLayout>
   <div class="flex flex-col gap-[12rem]">
     <HeroSection
-      title=`El puente hacia tu nuevo hogar <span
-        class="text-blue-50 dark:text-yellow-400">Sinergia Valores</span>`
-      subTitle="Garantiza tu futuro hogar en segundos - Solicita una fianza con nosotros."
+      title=`<span
+        class="dark:text-white text-neutral-700">Sinergia Valores S.A.</span>`
+      subTitle="Sistema de fianzas de alquiler 100 % digital con calificacion en 24 hs."
       primaryBtn="Solicita tu fianza"
       primaryBtnURL="/solicitud"
       secondaryBtn="Calcula costos"
@@ -39,7 +39,7 @@ import DollarSection from "@/components/sections/landing/DollarSection.tsx";
     <!-- <DollarSection client:load /> -->
 
     <FeaturesNavs
-      title=`<span class="text-blue-50 dark:text-yellow-400">Accede a tus sueños!</span>`
+      title=`<span class="text-yellow-400">Accede a tus sueños!</span>`
       tabs={[
         {
           heading: "Calcula Gratis",
@@ -68,51 +68,31 @@ import DollarSection from "@/components/sections/landing/DollarSection.tsx";
     />
 
     <TestimonialsSection
-      title="Fast-Track Your Projects"
-      subTitle="At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined."
-      testimonials={[
-        {
-          content:
-            "ScrewFast dramatically boosted our project efficiency. Setup was instant, and their rapid response times are phenomenal. Truly a game-changer in hardware and construction support!",
-          author: "Samantha Ruiz",
-          role: "Chief Operating Officer | ConstructIt Inc.",
-          avatarSrc:
-            "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-        },
-      ]}
+      title=""
+      subTitle=""
       statistics={[
         {
-          header: "Compatible",
+          header: "CONFIANZA",
           description:
-            "Nuestros servicios están diseñados para integrarse fácilmente con tus sistemas actuales. No importa qué tecnología utilices, garantizamos una perfecta compatibilidad para facilitar tu trabajo diario.",
+            "Equipo liderado por profesionales idoneos del area legal y financiero comprometidos con el servicio y respaldo durante todo el proceso.",
         },
         {
-          header: "Seguro",
-          description:
-            "Protege lo que más importa con nuestras soluciones de seguros confiables. Contamos con coberturas adaptadas a tus necesidades para brindarte la tranquilidad que mereces en cada momento.",
+          header: "SEGURIDAD",
+          description: "Protege tu inversion con nuestro sistema de fianzas para alquiler basado en el analisis por scoring.",
         },
         {
-          header: "Sencillo",
-          description:
-            "Hemos simplificado todo el proceso para que puedas gestionar tus seguros de manera rápida y fácil. Desde la cotización hasta la reclamación, todo se maneja de forma intuitiva y sin complicaciones.",
+          header: "SIMPLE, RAPIDO Y DIGITAL",
+          description: "La conformidad de la fianza para alquiler es gestionada en 24 hs mediante un procedimiento 100 % digital.",
         },
         {
-          header: "Confiable",
-          description:
-            "Confía en una empresa con años de experiencia y un historial probado de satisfacción del cliente. Estamos comprometidos a brindarte el mejor servicio y respaldo en todo momento.",
+          header: "LIQUIDEZ INMEDIATA",
+          description: "Ante impagos respondemos con liquidez inmediata hasta la restitucion de la propiedad.",
         },
       ]}
     />
 
-    <!-- <PricingSection pricing={pricing} /> -->
-
     <FAQ title="Preguntas Frecuentes" faqs={faqs} />
 
-    <!-- <HeroSectionAlt
-    title="Let's Build Together"
-    subTitle="ScrewFast is an open-source template, meticulously crafted with Astro, Tailwind CSS, and Preline UI frameworks."
-    url="https://github.com/mearashadowfax/ScrewFast"
-  /> -->
     <CompaniesAttached title={companiesAttached.title} inmobiliarias={companiesAttached.inmobiliarias} />
   </div>
 </MainLayout>
