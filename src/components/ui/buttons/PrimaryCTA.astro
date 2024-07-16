@@ -20,10 +20,7 @@ const darkClasses = "dark:border-neutral-700 dark:bg-yellow-400 dark:text-white 
 ---
 
 <!-- Link styled as a button, with dynamic title, URL, and optional arrow -->
-<a
-  class={`${baseClasses} ${darkClasses} hover:bg-neutral-400/50 ${borderClasses} ${bgColorClasses} ${disableClasses} ${fontSizeClasses} ${ringClasses}`}
-  href={url}
->
+<a class={`${baseClasses} ${darkClasses} ${borderClasses} ${bgColorClasses} ${disableClasses} ${fontSizeClasses} ${ringClasses}`} href={url}>
   {title}
   <!-- Display the arrow based on the 'noArrow' property -->
 
