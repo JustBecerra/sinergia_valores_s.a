@@ -64,7 +64,7 @@ const DollarPrices = () => {
         ) : (
           dollarPrices.map((dolar, index) => (
             <div
-              className="flex w-[25%] flex-shrink-0 items-center justify-center gap-4 rounded-xl border-2 border-blue-50 p-2 dark:border-yellow-500"
+              className="flex w-[25%] min-w-[230px] flex-shrink-0 items-center justify-center gap-4 rounded-xl border-2 border-blue-50 p-2 dark:border-yellow-500"
               key={index}
             >
               <div className="flex flex-col">
