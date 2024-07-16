@@ -2,22 +2,13 @@
 import TestimonialItem from "./TestimonialItem.astro";
 import StatsGrid from "../../ui/blocks/StatsGrid.astro";
 
-const { title, subTitle, testimonials, statistics } = Astro.props;
+const { title, subTitle, statistics } = Astro.props;
 
 interface Props {
   title: string;
   subTitle?: string;
-  testimonials?: Testimonial[];
   statistics?: StatProps[];
 }
-
-// TypeScript type for testimonials
-type Testimonial = {
-  content: string;
-  author: string;
-  role: string;
-  avatarSrc: string;
-};
 
 // TypeScript type for stats.
 type StatProps = {
