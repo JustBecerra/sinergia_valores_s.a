@@ -27,8 +27,15 @@ const DollarPrices = () => {
     const scrollContainer = scrollRef;
 
     const scroll = () => {
-      if (scrollContainer) {
-        scrollContainer!.current!.scrollLeft += 1;
+      if (
+        scrollContainer.current &&
+        scrollContainer.current!.scrollLeft !==
+          scrollContainer.current.scrollWidth -
+            scrollContainer.current.clientWidth
+      ) {
+        scrollContainer.current.scrollLeft += 1;
+      } else if (scrollContainer.current) {
+        scrollContainer.current.scrollLeft = 0;
       }
     };
 
@@ -57,12 +64,16 @@ const DollarPrices = () => {
         ) : (
           dollarPrices.map((dolar, index) => (
             <div
-              className="flex w-[30%] flex-shrink-0 items-center justify-center gap-4 border-2 border-yellow-500 p-2"
+              className="flex w-[25%] flex-shrink-0 items-center justify-center gap-4 border-2 border-yellow-500 p-2"
               key={index}
             >
               <div className="flex flex-col">
                 <h1 className="text-center">{dolar.moneda}</h1>
-                <h1 className="text-nowrap text-center">{dolar.nombre}</h1>
+                <h1 className="text-nowrap text-center">
+                  {dolar.nombre === "Contado con liquidación"
+                    ? "CCL"
+                    : dolar.nombre}
+                </h1>
               </div>
               <div className="flex flex-col">
                 <h1 className="text-center">Compra: </h1>
