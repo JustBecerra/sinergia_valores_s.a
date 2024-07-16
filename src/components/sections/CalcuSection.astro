@@ -11,7 +11,8 @@ import PrecioInput from "../ui/forms/input/PrecioInput.astro";
 const title: string = "Calculadora";
 const subTitle: string = "...";
 const formTitle: string = "CALCULADORA";
-const formSubTitle: string = "VALORES CALCULADOS EN BASE A LOS VALORES INGRESADOS. EL COSTO FINAL CORRESPONDERA AL CALCULO EN BASE A LOS VALORES DEFINITIVOS DEL CONTRATO DE ALQUILER.";
+const formSubTitle: string =
+  "VALORES CALCULADOS EN BASE A LOS VALORES INGRESADOS. EL COSTO FINAL CORRESPONDERA AL CALCULO EN BASE A LOS VALORES DEFINITIVOS DEL CONTRATO DE ALQUILER.";
 ---
 
 <!-- calculadora -->
@@ -19,16 +20,16 @@ const formSubTitle: string = "VALORES CALCULADOS EN BASE A LOS VALORES INGRESADO
   <div class="mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16">
     <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
       <!-- Titulo del form Calculadora mas icono de calculadora -->
-      <h1 class="gap-4 text-2xl font-bold tracking-wider text-black flex items-center justify-center space-xs-2 mb-6">
+      <h1 class="space-xs-2 mb-6 flex items-center justify-center gap-4 text-2xl font-bold tracking-wider text-black">
         <Icon name="calculator" />
-        <span>{formTitle}</span>
+        <span class="text-text-neutral-700 dark:text-white">{formTitle}</span>
         <Icon name="calculator" />
       </h1>
       <!-- Form for user input with various input fields.-->
       <form id="calculatorForm">
         <div class="grid gap-4">
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <PrecioInput id="rent" label="Monto promedio de tu alquiler" name="rent" alerta="Probando mas corto"/>
+            <PrecioInput id="rent" label="Monto promedio de tu alquiler" name="rent" alerta="Probando mas corto" />
             <PrecioInput id="expenses" label="Monto Expensas" name="expenses" alerta="Este siualmente caqón." />
             <MenuDesplegable id="tipoAlquiler" label="Tipo de Alquiler" name="tipoAlquiler" />
             <DuracionAlquiler id="duration" label="Duración del Alquiler" name="duracionAlquiler" />
@@ -37,7 +38,7 @@ const formSubTitle: string = "VALORES CALCULADOS EN BASE A LOS VALORES INGRESADO
             <AuthBtn title="CALCULAR" />
           </div>
           <div class="mt-3 text-center">
-            <p class="mt-1 mb-10 text-xs text-neutral-600 dark:text-neutral-400">
+            <p class="mb-10 mt-1 text-xs text-neutral-600 dark:text-neutral-400">
               {formSubTitle}
             </p>
           </div>
