@@ -57,7 +57,7 @@ const DollarPrices = () => {
     <section className="mx-auto mt-6 w-[100%]">
       <div
         ref={scrollRef}
-        className="flex w-[100%] gap-4 overflow-auto bg-white px-4 py-6 sm:px-6 md:items-center md:gap-8 lg:px-8 2xl:max-w-full"
+        className="scrollbar-hide flex w-[100%] gap-4 overflow-y-hidden overflow-x-scroll bg-white px-4 py-6 sm:px-6 md:items-center md:gap-8 lg:px-8 2xl:max-w-full"
       >
         {loading ? (
           <h1>cargando precios...</h1>

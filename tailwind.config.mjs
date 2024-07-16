@@ -50,5 +50,16 @@ export default {
     require("tailwindcss/nesting"),
     require("preline/plugin"),
     require("@tailwindcss/forms"),
+    function ({ addUtilities }) {
+      addUtilities({
+        ".scrollbar-hide": {
+          "-ms-overflow-style": "none" /* IE and Edge */,
+          "scrollbar-width": "none" /* Firefox */,
+          "&::-webkit-scrollbar": {
+            display: "none" /* Safari and Chrome */,
+          },
+        },
+      });
+    },
   ],
 };
