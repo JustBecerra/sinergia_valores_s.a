@@ -34,7 +34,8 @@ export const OG = {
   locale: "en_US",
   type: "website",
   url: SITE.url,
-  title: `${SITE.title}: : Hardware Tools & Construction Services`,
-  description: "El puente hacia tu nuevo hogar Sinergia Valores",
+  title: `${SITE.title}`,
+  description:
+    "Sinergia Valores Sistema de fianzas de alquiler 100 % digital con calificacion en 24 hs.",
   image: ogImageSrc,
 };
