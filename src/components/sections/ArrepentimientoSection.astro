@@ -10,15 +10,18 @@ const { title, description, name, lastname, nacionality, idnumber, phonenumber, 
       {description}
     </p>
     <div>
-      <form>
+      <form class="grid grid-cols-2 gap-8">
         <input placeholder={name} />
         <input placeholder={lastname} />
         <input placeholder={nacionality} />
         <input placeholder={idnumber} />
         <input placeholder={phonenumber} />
         <input placeholder={mail} />
-        <input placeholder={serviceorproduct} />
-        <button>{sendtext}</button>
+        <input placeholder={serviceorproduct} class="col-span-2 w-[50%]" />
+        <button
+          class="col-span-2 inline-flex w-[20rem] items-center justify-center gap-x-2 rounded-lg bg-yellow-500 px-4 py-3 text-sm font-bold text-neutral-50 outline-none ring-zinc-500 transition duration-300 focus-visible:ring"
+          >{sendtext}</button
+        >
       </form>
     </div>
   </div>
