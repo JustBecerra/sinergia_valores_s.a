@@ -1,0 +1,25 @@
+---
+import { ArrepentimientoFormInfo } from "@/data_files/constants";
+const { title, description, name, lastname, nacionality, idnumber, phonenumber, mail, serviceorproduct, sendtext } = ArrepentimientoFormInfo;
+---
+
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+  <div class="mx-auto max-w-2xl lg:max-w-5xl">
+    <h1>{title}</h1>
+    <p>
+      {description}
+    </p>
+    <div>
+      <form>
+        <input placeholder={name} />
+        <input placeholder={lastname} />
+        <input placeholder={nacionality} />
+        <input placeholder={idnumber} />
+        <input placeholder={phonenumber} />
+        <input placeholder={mail} />
+        <input placeholder={serviceorproduct} />
+        <button>{sendtext}</button>
+      </form>
+    </div>
+  </div>
+</section>
