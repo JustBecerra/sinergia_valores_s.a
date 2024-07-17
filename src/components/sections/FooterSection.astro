@@ -7,6 +7,7 @@ import DarkModeBrandLogo from "../DarkModeBrandLogo.astro";
 
 const strings = enStrings;
 const sectionThreeTitle: string = "Contactanos";
+const arrepentimiento: string = "Arrepentimiento";
 ---
 
 <footer class="w-full bg-neutral-300 dark:bg-neutral-900">
@@ -40,7 +41,28 @@ const sectionThreeTitle: string = "Contactanos";
         ))
       }
 
-      <div class="col-span-1 flex h-fit w-fit items-center justify-center rounded-2xl bg-white p-2 dark:bg-black md:ml-auto xl:mx-auto">
+      <div class="col-span-1 hidden justify-between md:flex">
+        <div class="flex h-fit w-fit items-center justify-center rounded-2xl bg-white p-2 dark:bg-black md:ml-auto xl:mx-auto">
+          <a
+            href="/contacto"
+            class="cursor-pointer rounded-lg border-2 border-black p-2 font-bold text-neutral-800 hover:border-blue-50 hover:text-blue-50 dark:border-white dark:text-neutral-200 dark:hover:border-yellow-400 dark:hover:text-yellow-400"
+          >
+            {sectionThreeTitle}
+          </a>
+        </div>
+
+        <div class="flex h-fit w-fit items-center justify-center rounded-2xl bg-white p-2 dark:bg-black md:ml-auto xl:mx-auto">
+          <a
+            href="/arrepentimiento"
+            class="cursor-pointer rounded-lg border-2 border-black p-2 font-bold text-neutral-800 hover:border-blue-50 hover:text-blue-50 dark:border-white dark:text-neutral-200 dark:hover:border-yellow-400 dark:hover:text-yellow-400"
+          >
+            {arrepentimiento}
+          </a>
+        </div>
+      </div>
+
+      <!-- <div class="col-span-1 flex justify-between "> -->
+      <div class="col-span-1 flex h-fit w-fit items-center justify-center rounded-2xl bg-white p-2 dark:bg-black md:ml-auto md:hidden xl:mx-auto">
         <a
           href="/contacto"
           class="cursor-pointer rounded-lg border-2 border-black p-2 font-bold text-neutral-800 hover:border-blue-50 hover:text-blue-50 dark:border-white dark:text-neutral-200 dark:hover:border-yellow-400 dark:hover:text-yellow-400"
@@ -48,6 +70,16 @@ const sectionThreeTitle: string = "Contactanos";
           {sectionThreeTitle}
         </a>
       </div>
+
+      <div class="col-span-1 flex h-fit w-fit items-center justify-center rounded-2xl bg-white p-2 dark:bg-black md:ml-auto md:hidden xl:mx-auto">
+        <a
+          href="/arrepentimiento"
+          class="cursor-pointer rounded-lg border-2 border-black p-2 font-bold text-neutral-800 hover:border-blue-50 hover:text-blue-50 dark:border-white dark:text-neutral-200 dark:hover:border-yellow-400 dark:hover:text-yellow-400"
+        >
+          {arrepentimiento}
+        </a>
+      </div>
+      <!-- </div> -->
     </div>
 
     <div class="mt-9 grid gap-y-2 sm:mt-12 sm:flex sm:items-center sm:justify-between sm:gap-y-0">
