@@ -1,6 +1,6 @@
 ---
 import { ArrepentimientoFormInfo } from "@/data_files/constants";
-const { title, description, name, lastname, nacionality, idnumber, phonenumber, mail, serviceorproduct, sendtext } = ArrepentimientoFormInfo;
+const { title, description, name, nacionality, idnumber, phonenumber, mail, serviceorproduct, sendtext } = ArrepentimientoFormInfo;
 ---
 
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
@@ -10,18 +10,21 @@ const { title, description, name, lastname, nacionality, idnumber, phonenumber, 
       {description}
     </p>
     <div>
-      <form class="grid grid-cols-2 gap-8">
+      <form class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <input placeholder={name} />
-        <input placeholder={lastname} />
+        <!-- <input placeholder={lastname} /> -->
         <input placeholder={nacionality} />
         <input placeholder={idnumber} />
         <input placeholder={phonenumber} />
         <input placeholder={mail} />
-        <input placeholder={serviceorproduct} class="col-span-2 w-[50%]" />
-        <button
-          class="col-span-2 inline-flex w-[20rem] items-center justify-center gap-x-2 rounded-lg bg-yellow-500 px-4 py-3 text-sm font-bold text-neutral-50 outline-none ring-zinc-500 transition duration-300 focus-visible:ring"
-          >{sendtext}</button
-        >
+        <input placeholder={serviceorproduct} />
+        <div class="col-span-2 flex justify-center">
+          <button
+            type="submit"
+            class="inline-flex w-[20rem] items-center justify-center gap-x-2 rounded-lg bg-yellow-500 px-4 py-3 text-sm font-bold text-neutral-50 outline-none ring-zinc-500 transition duration-300 focus-visible:ring"
+            >{sendtext}</button
+          >
+        </div>
       </form>
     </div>
   </div>

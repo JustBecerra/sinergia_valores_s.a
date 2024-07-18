@@ -34,8 +34,8 @@ export const ArrepentimientoFormInfo = {
   title: "Arrepentimiento",
   description:
     "Solicitar la revocación de un producto o servicio contratado con Sinergia Valores S.A. dentro de los 10 (diez) días corridos contados a partir de la fecha de recibido el contrato o de la disponibilidad efectiva del producto o servicio, lo que suceda último; de esta manera, podrás arrepentirte y deshacer la contratación del producto/servicio solicitado en ese plazo informado.",
-  name: "Nombre",
-  lastname: "Apellido",
+  name: "Nombre Completo",
+  // lastname: "Apellido",
   nacionality: "Nacionalidad",
   idnumber: "Documento y Numero",
   phonenumber: "Telefono/Celular de contacto",
