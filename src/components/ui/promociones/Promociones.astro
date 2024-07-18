@@ -1,6 +1,6 @@
 ---
 // Promociones.astro
-import { handleSubmit } from "../../../types/calculator.ts"
+
 ---
 
 <div class="flex flex-col justify-between gap-4 md:flex-row">
@@ -58,7 +58,6 @@ import { handleSubmit } from "../../../types/calculator.ts"
   </div>
 
   <script type="module">
-
-    document.getElementById("calculatorForm")?.addEventListener("submit", handleSubmit);
+    import { handleSubmit } from "../src/types/calculator.ts";
+    document.getElementById('calculatorForm')?.addEventListener('submit', handleSubmit);
   </script>
-</div>
