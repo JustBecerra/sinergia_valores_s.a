@@ -1,0 +1,31 @@
+---
+import { ArrepentimientoFormInfo } from "@/data_files/constants";
+const { title, description, name, nacionality, idnumber, phonenumber, mail, serviceorproduct, sendtext } = ArrepentimientoFormInfo;
+---
+
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+  <div class="mx-auto flex max-w-2xl flex-col gap-8 lg:max-w-5xl">
+    <h1 class="text-center text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">{title}</h1>
+    <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+      {description}
+    </p>
+    <div>
+      <form class="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <input placeholder={name} />
+        <!-- <input placeholder={lastname} /> -->
+        <input placeholder={nacionality} />
+        <input placeholder={idnumber} />
+        <input placeholder={phonenumber} />
+        <input placeholder={mail} />
+        <input placeholder={serviceorproduct} />
+        <div class="col-span-2 flex justify-center">
+          <button
+            type="submit"
+            class="inline-flex w-[20rem] items-center justify-center gap-x-2 rounded-lg bg-yellow-500 px-4 py-3 text-sm font-bold text-neutral-50 outline-none ring-zinc-500 transition duration-300 focus-visible:ring"
+            >{sendtext}</button
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
