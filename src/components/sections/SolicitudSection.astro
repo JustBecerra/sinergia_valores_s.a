@@ -6,6 +6,7 @@ import TextInput from "@components/ui/forms/input/TextInput.astro";
 import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astro";
 import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
+import { handleSubmit } from "@/types/calculator";
 
 // Define the variables that will be used in this component
 const title: string = "Start your aplication";
@@ -33,7 +34,8 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
       <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
         <h2
           class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300"
-        >
+        > 
+        <!--Form reactive input forms-->
           {formTitle}
         </h2>
         <!-- Form for user input with various input fields.-->
