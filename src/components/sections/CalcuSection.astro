@@ -1,12 +1,11 @@
 ---
-import AuthBtn from "@/components/ui/buttons/AuthBtn.astro";
-import MenuDesplegable from "@components/ui/forms/input/MenuDesplegable.astro";
-import DuracionAlquiler from "@/components/ui/forms/input/DuracionAlquiler.astro";
-import Promociones from "@components/ui/promociones/Promociones.astro";
-import Icon from "@components/ui/icons/Icon.astro";
+import Calculator from '../calculator/calculator.jsx';
+import MenuDesplegable from "../ui/forms/input/MenuDesplegable.astro";
+import DuracionAlquiler from "../ui/forms/input/DuracionAlquiler.astro";
+import Promociones from "../ui/promociones/Promociones.astro";
+import Icon from "../ui/icons/Icon.astro";
 import PrecioInput from "../ui/forms/input/PrecioInput.astro";
 
-// Define the variables that will be used in this component
 const title: string = "Calculadora";
 const subTitle: string = "...";
 const formTitle: string = "CALCULADORA";
@@ -25,57 +24,16 @@ const formSubTitle: string =
         <Icon name="calculator" />
       </h1>
 
-      <form id="calculatorForm">
-        <div class="grid gap-4">
-          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <PrecioInput id="rent" label="Monto promedio de tu alquiler" name="rent" alerta="Probando mas corto" />
-            <PrecioInput id="expenses" label="Monto Expensas" name="expenses" alerta="Este siualmente caqón." />
-            <MenuDesplegable id="tipoAlquiler" label="Tipo de Alquiler" name="tipoAlquiler" />
-            <DuracionAlquiler id="duration" label="Duración del Alquiler" name="duracionAlquiler" />
-          </div>
-          <div class="mt-4 grid">
-            <AuthBtn title="CALCULAR" />
-          </div>
-          <div class="mt-3 text-center">
-            <p class="mb-10 mt-1 text-xs text-neutral-600 dark:text-neutral-400">
-              {formSubTitle}
-            </p>
-          </div>
-          <div id="result" class="mt-6 text-center"></div>
-        </div>
+      <!-- Integrando el componente React Calculator -->
+      <Calculator />
 
-        <script>
-          document.addEventListener("DOMContentLoaded", () => {
-            const tipoAlquilerElement = document.getElementById("tipoAlquiler") as HTMLSelectElement;
-            const duracionAlquilerElement = document.getElementById("duration") as HTMLSelectElement;
-
-            function handleTipoAlquilerChange() {
-              if (tipoAlquilerElement && duracionAlquilerElement) {
-                const tipoAlquiler = tipoAlquilerElement.value;
-
-                // Limpiar opciones actuales
-                duracionAlquilerElement.innerHTML = '<option value="" disabled selected>Duracion del Alquiler</option>';
-
-                if (tipoAlquiler === "temporal") {
-                  duracionAlquilerElement.innerHTML += '<option value="6">6 Meses</option>';
-                  duracionAlquilerElement.innerHTML += '<option value="7">7 Meses</option>';
-                  duracionAlquilerElement.innerHTML += '<option value="8">8 Meses</option>';
-                } else {
-                  duracionAlquilerElement.innerHTML += '<option value="12">12 Meses</option>';
-                  duracionAlquilerElement.innerHTML += '<option value="18">18 Meses</option>';
-                  duracionAlquilerElement.innerHTML += '<option value="24">24 Meses</option>';
-                  duracionAlquilerElement.innerHTML += '<option value="36">36 Meses</option>';
-                }
-              }
-            }
-
-            if (tipoAlquilerElement) {
-              tipoAlquilerElement.addEventListener("change", handleTipoAlquilerChange);
-            }
-          });
-        </script>
-      </form>
+      <div class="mt-3 text-center">
+        <p class="mb-10 mt-1 text-xs text-neutral-600 dark:text-neutral-400">
+          {formSubTitle}
+        </p>
+      </div>
     </div>
     <Promociones />
   </div>
 </section>
+

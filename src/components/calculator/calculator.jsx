@@ -503,7 +503,7 @@ const Calculator = () => {
   const [duracionAlquiler, setDuracionAlquiler] = useState('');
   const [results, setResults] = useState(null);
 
-  console.log("dentro de la función de calculator");
+  console.log("Componente Calculator renderizado");
 
   const calcularResultado = (rent, expenses, tipoAlquiler, duracionAlquiler) => {
     let total = 0;
@@ -551,6 +551,7 @@ const Calculator = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log("Formulario enviado");
     console.log("Valores antes de calcular:");
     console.log("Rent:", rent);
     console.log("Expenses:", expenses);
@@ -579,10 +580,14 @@ const Calculator = () => {
           </div>
           <div>
             <label>Monto Expensas</label>
-            <input type="number" value={expenses} onChange={(e) => {
-              console.log("Expenses input cambiado:", e.target.value);
-              setExpenses(e.target.value);
-            }} />
+            <input 
+              type="number" 
+              value={expenses} 
+              onChange={(e) => {
+                console.log("Expenses input cambiado:", e.target.value);
+                setExpenses(e.target.value);
+              }} 
+            />
           </div>
           <div>
             <label>Tipo de Alquiler</label>
@@ -599,7 +604,7 @@ const Calculator = () => {
           <div>
             <label>Duración del Alquiler</label>
             <select value={duracionAlquiler} onChange={(e) => {
-              console.log("Duración del Alquiler cambiada:", e.target.value);
+              console.log("Duración del Alquiler cambiado:", e.target.value);
               setDuracionAlquiler(e.target.value);
             }}>
               <option value="" disabled>Seleccione la duración del alquiler</option>

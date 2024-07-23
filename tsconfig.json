@@ -1,29 +1,47 @@
+// {
+//   "extends": "astro/tsconfigs/strict",
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": [
+//         "src/*"
+//       ],
+//       "@components/*": [
+//         "src/components/*"
+//       ],
+//       "@content/*": [
+//         "src/content/*"
+//       ],
+//       "@data/*": [
+//         "src/data_files/*"
+//       ],
+//       "@images/*": [
+//         "src/images/*"
+//       ],
+//       "@styles/*": [
+//         "src/styles/*"
+//       ],
+//       "@utils/*": [
+//         "src/utils/*"
+//       ]
+//     },
+//     "jsx": "react-jsx",
+//     "jsxImportSource": "react"
+//   }
+// }
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@content/*": [
-        "src/content/*"
-      ],
-      "@data/*": [
-        "src/data_files/*"
-      ],
-      "@images/*": [
-        "src/images/*"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ]
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@content/*": ["src/content/*"],
+      "@data/*": ["src/data_files/*"],
+      "@images/*": ["src/images/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
