@@ -43,7 +43,7 @@ export default {
     extend: {},
     fontFamily: {
       gotham: ["Gotham", "sans-serif"],
-      corporative: ["Corporative", "sans-serif"],
+      corporative: ["Nunito", "sans-serif"],
     },
   },
   plugins: [
