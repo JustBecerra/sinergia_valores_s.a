@@ -41,10 +41,10 @@ export default {
       }, // Used mainly for links and buttons
     },
     extend: {},
-  },
-  fontFamily: {
-    gotham: ["Gotham", "sans-serif"],
-    corporative: ["Corporative", "sans-serif"],
+    fontFamily: {
+      gotham: ["Gotham", "sans-serif"],
+      corporative: ["Corporative", "sans-serif"],
+    },
   },
   plugins: [
     require("tailwindcss/nesting"),
