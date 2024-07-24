@@ -20,7 +20,7 @@ const { title, inmobiliarias } = Astro.props;
       inmobiliarias.map((inmobiliaria) => (
         <div class="relative flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-white">
           <div class="absolute left-2 h-[34px] w-[34px] rounded-full border-4 border-yellow-500 bg-white dark:border-yellow-500" />
-          <h2 class="ml-[10px] h-fit w-[200px] overflow-hidden text-ellipsis text-nowrap rounded-lg bg-yellow-500 px-4 py-1 text-center text-sm text-neutral-600 dark:bg-yellow-500 dark:text-white">
+          <h2 class="ml-[10px] h-fit w-[200px] overflow-hidden text-ellipsis text-nowrap rounded-lg bg-yellow-500 px-4 py-1 text-center font-nunito text-sm text-neutral-600 dark:bg-yellow-500 dark:text-white">
             {inmobiliaria.title}
           </h2>
         </div>
