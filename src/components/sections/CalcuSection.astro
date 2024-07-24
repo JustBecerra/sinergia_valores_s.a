@@ -8,17 +8,14 @@ import PrecioInput from "../ui/forms/input/PrecioInput.astro";
 
 // Define the variables that will be used in this component
 const title: string = "Calculadora";
-const subTitle: string = "...";
 const formTitle: string = "CALCULADORA";
 const formSubTitle: string =
   "VALORES CALCULADOS EN BASE A LOS VALORES INGRESADOS. EL COSTO FINAL CORRESPONDERA AL CALCULO EN BASE A LOS VALORES DEFINITIVOS DEL CONTRATO DE ALQUILER.";
 ---
 
-<!-- calculadora -->
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
   <div class="mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16">
     <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
-      <!-- Titulo del form Calculadora mas icono de calculadora -->
       <h1 class="space-xs-2 mb-6 flex items-center justify-center gap-4 text-2xl font-bold tracking-wider text-black">
         <Icon name="calculator" />
         <span class="font-gotham text-neutral-700 dark:text-white">{formTitle}</span>
@@ -44,16 +41,18 @@ const formSubTitle: string =
           <!-- <div id="result" class="mt-6 text-center"></div> -->
         </div>
 
-        <script>
+        <script type="module">
+          import { handleSubmit } from '../src/types/calculator.ts';
+
           document.addEventListener("DOMContentLoaded", () => {
-            const tipoAlquilerElement = document.getElementById("tipoAlquiler") as HTMLSelectElement;
-            const duracionAlquilerElement = document.getElementById("duration") as HTMLSelectElement;
+            const form = document.getElementById('calculatorForm');
+            const tipoAlquilerElement = document.getElementById("tipoAlquiler");
+            const duracionAlquilerElement = document.getElementById("duration");
 
             function handleTipoAlquilerChange() {
               if (tipoAlquilerElement && duracionAlquilerElement) {
                 const tipoAlquiler = tipoAlquilerElement.value;
 
-                // Limpiar opciones actuales
                 duracionAlquilerElement.innerHTML = '<option value="" disabled selected>Duracion del Alquiler</option>';
 
                 if (tipoAlquiler === "temporal") {
@@ -71,6 +70,10 @@ const formSubTitle: string =
 
             if (tipoAlquilerElement) {
               tipoAlquilerElement.addEventListener("change", handleTipoAlquilerChange);
+            }
+
+            if (form) {
+              form.addEventListener('submit', handleSubmit);
             }
           });
         </script>
