@@ -14,13 +14,19 @@ const footerLinks = [
         name: "facebookFooter",
         url: "https://www.facebook.com/profile.php?id=61561059611052&mibextid=LQQJ4d",
       },
-      { name: "xFooter", url: "https://twitter.com/" },
+      {
+        name: "tiktokFooter",
+        url: "https://www.tiktok.com/@sinergia.valores?_t=8o3X7xTxBri&_r=1",
+      },
+      {
+        name: "instagramFooter",
+        url: "https://www.instagram.com/sinergiavalores/?hl=es-la",
+      },
     ],
   },
   {
     section: "Servicios",
     links: [
-      // { name: "Sobre Nosotros", url: "/nosotros" },
       { name: "Calculadora", url: "/calculadora" },
       { name: "Solicitud", url: "/solicitud" },
     ],
