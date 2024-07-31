@@ -1,7 +1,7 @@
 const navBarLinks = [
   { name: "Inicio", url: "/" },
   { name: "Solicitud", url: "/solicitud" },
-  { name: "Ayuda", url: "/preguntas" },
+  { name: "Ayuda", url: "/ayuda" },
   { name: "Calculadora", url: "/calculadora" },
   { name: "Contacto", url: "/contacto" },
 ];
@@ -19,7 +19,7 @@ const footerLinks = [
   {
     section: "Servicios",
     links: [
-      { name: "Ayuda", url: "/preguntas" },
+      { name: "Ayuda", url: "/ayuda" },
       { name: "Calculadora", url: "/calculadora" },
       { name: "Solicitud", url: "/solicitud" },
     ],
@@ -31,17 +31,8 @@ const whatsappInfo = {
   Message: `Hola, me estoy comunicando del sitio web de Sinergia valores para hacer una consulta.`,
 };
 
-const socialLinks = {
-  facebook: "https://www.facebook.com/",
-  x: "https://twitter.com/",
-  github: "https://github.com/mearashadowfax/ScrewFast",
-  google: "https://www.google.com/",
-  slack: "https://slack.com/",
-};
-
 export default {
   navBarLinks,
   footerLinks,
-  socialLinks,
   whatsappInfo,
 };
