@@ -90,7 +90,7 @@ const CalcuSectionReact: React.FC = () => {
   <div className="mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16">
     <div className="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
     <h1 className="space-xs-2 mb-6 flex items-center justify-center gap-4 text-2xl font-bold tracking-wider text-black">
-    <FaCalculator className="text-text-neutral-700 dark:text-white" />
+       <IoCalculatorSharp className="text-text-neutral-700 dark:text-white" />
         <span className="text-text-neutral-700 dark:text-white">{formTitle}</span>
         <IoCalculatorSharp className="text-text-neutral-700 dark:text-white" />
       </h1>
@@ -130,7 +130,7 @@ const CalcuSectionReact: React.FC = () => {
                 onChange={(e) => setTipoAlquiler(e.target.value)}
                 className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 pl-5 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
               >
-                <option value="" disabled>
+                <option value="" disabled className="text-gray-500">
                   Seleccione el tipo de alquiler
                 </option>
                 <option value="temporal">Temporal</option>
@@ -146,7 +146,7 @@ const CalcuSectionReact: React.FC = () => {
                 }
                 className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 pl-5 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
               >
-                <option value="" disabled>
+                <option value="" disabled className="text-gray-500">
                   Seleccione la duración del alquiler
                 </option>
                 {tipoAlquiler === "temporal" ? (
