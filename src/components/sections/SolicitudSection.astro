@@ -40,7 +40,7 @@ const formSubTitle: string = "Nos estaremos comunicando con usted en breve";
         <!-- Form for user input with various input fields.-->
         <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
         <form>
-          <div class="grid gap-4">
+          <div class="grid gap-4 centre">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
                 id="hs-firstname-contacts"
@@ -52,11 +52,27 @@ const formSubTitle: string = "Nos estaremos comunicando con usted en breve";
                 label="Apellido"
                 name="hs-firstname-contacts"
               />
-              <EmailContactInput id="hs-email-contacts" />
-              <EmailContactInput id ="hs-email-check"
-                label="Confirmar Email"
+              <TextInput
+                id ="hs-email-check"
+                label="Tipo"
+                name="hs-mail-check"
+              />
+              <TextInput
+                id="hs-dni-contacts"
+                label="Nro Documento"
+                name="hs-dni-number"
               />
             </div>
+            <TextInput
+            id ="hs-email-check"
+            label="Ingrese Email"
+            name="hs-mail-check"
+          />
+          <TextInput
+            id ="hs-email-check"
+            label="Confirmar Email"
+            name="hs-mail-check"
+          />
             <!-- <PhoneInput id="hs-phone-number" 
               label="Numero de telefono"
               />-->
