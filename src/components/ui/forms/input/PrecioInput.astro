@@ -1,6 +1,4 @@
 ---
-
-
 const { label, id, name, alerta } = Astro.props;
 
 interface Props {
@@ -23,22 +21,21 @@ interface Props {
     step="1.00" 
   />
   <span style="position: absolute; left: 10px; top: 10px; padding-right: 5px;bg-neutral-50">$&nbsp;</span>
-</div> -->
-<!-- funciona -->
- <div class="relative">
+</div> --><!-- funciona -->
+<div class="relative">
   <label for={id} class="sr-only">{label}</label>
-  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+  <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
     <span class="text-neutral-500 dark:text-neutral-400">$</span>
   </div>
   <input
     type="number"
     name={name}
     id={id}
-    class="block w-full pl-5 rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+    class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 pl-5 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
     placeholder={label}
     step="1.00"
   />
-</div> 
+</div>
 <!-- prueba -->
 <!-- <div class="relative inline-block">
   <label for={id} class="sr-only">{label}</label>

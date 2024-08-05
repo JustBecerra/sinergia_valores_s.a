@@ -56,25 +56,24 @@ const articles: Article[] = [
     btnTitle: "Learn More",
     btnURL: "#",
   },
-  {
-    isRightSection: true,
-    title: "Navigating Projects with Professional Oversight",
-    subTitle:
-      "Effective project management is at the heart of any successful build. ScrewFast provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.",
-    single: false,
-    imgOne: constructionWorkers,
-    imgOneAlt: "Construction workers orchestrating a project",
-    imgTwo: aerialView,
-    imgTwoAlt: "Aerial view of managed construction",
-  },
+  // {
+  //   isRightSection: true,
+  //   title: "Navigating Projects with Professional Oversight",
+  //   subTitle:
+  //     "Effective project management is at the heart of any successful build. ScrewFast provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.",
+  //   single: false,
+  //   imgOne: constructionWorkers,
+  //   imgOneAlt: "Construction workers orchestrating a project",
+  //   imgTwo: aerialView,
+  //   imgTwoAlt: "Aerial view of managed construction",
+  // },
   {
     isRightSection: false,
     title: "Ensuring Long-lasting Performance",
     subTitle:
       "Our commitment to your project doesn't end at completion. ScrewFast offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
     img: usingTools,
-    imgAlt:
-      "Man in orange and black vest wearing white helmet holding yellow and black power tool",
+    imgAlt: "Man in orange and black vest wearing white helmet holding yellow and black power tool",
   },
   {
     isRightSection: true,
@@ -101,16 +100,17 @@ const pageTitle: string = `Services | ${SITE.title}`;
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": "https://screwfast.uk/services",
-    "url": "https://screwfast.uk/services",
-    "name": "Expert Consultation Services | ScrewFast",
-    "description": "Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.",
-    "isPartOf": {
-        "@type": "WebSite",
-        "url": "https://screwfast.uk",
-        "name": "ScrewFast",
-        "description": "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs."
+    url: "https://screwfast.uk/services",
+    name: "Expert Consultation Services | ScrewFast",
+    description:
+      "Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://screwfast.uk",
+      name: "ScrewFast",
+      description: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
     },
-    "inLanguage": "en-US"
+    inLanguage: "en-US",
   }}
 >
   <!--MainSection is the introductory section of the page, it also contains a CTA button-->
@@ -129,8 +129,8 @@ const pageTitle: string = `Services | ${SITE.title}`;
   RightSection can also conditionally render one or two images based on the 'single' property.
   If 'single' is true, it displays one image, otherwise it displays two.
   -->
-  {
-    articles.map(article => {
+  <!-- {
+    articles.map((article) => {
       return article.isRightSection ? (
         <RightSection
           title={article.title}
@@ -156,7 +156,7 @@ const pageTitle: string = `Services | ${SITE.title}`;
         />
       );
     })
-  }
+  } -->
   <!--FeaturesStats section showcases essential stats valuable to users-->
   <FeaturesStats
     title="By the Numbers"

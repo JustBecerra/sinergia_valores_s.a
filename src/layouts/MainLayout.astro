@@ -21,7 +21,7 @@ interface Props {
 This is the main structure for the page.
 We set the language of the page to English and add classes for scrollbar and scroll behavior.
 -->
-<html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
+<html lang={lang} class="lenis lenis-smooth scroll-pt-16 scrollbar-hide">
   <head>
     <!-- Adding metadata to the HTML document -->
     <Meta meta={meta} structuredData={structuredData} />
@@ -38,6 +38,7 @@ We set the language of the page to English and add classes for scrollbar and scr
         document.documentElement.classList.remove("dark");
       }
     </script>
+    <link rel="stylesheet" href="../styles/global.css" />
     <script is:inline src="/scripts/vendor/lenis/lenis.js"></script>
     <script is:inline>
       // Script to handle Lenis library settings for smooth scrolling
