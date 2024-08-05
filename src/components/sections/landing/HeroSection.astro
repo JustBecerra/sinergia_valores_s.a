@@ -5,7 +5,7 @@ import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import LightModeBrandLogo from "@/components/LightModeBrandLogo.astro";
 import DarkModeBrandLogo from "@/components/DarkModeBrandLogo.astro";
-
+import favico from "@images/favico.png";
 // Define props from Astro
 const { title, subTitle, primaryBtn, primaryBtnURL, secondaryBtn, secondaryBtnURL, withReview, avatars, starCount, rating, reviews, src, alt } =
   Astro.props;
@@ -44,7 +44,7 @@ interface Props {
     </div>
   </div>
   <div class="mr-0 mt-8 flex w-full justify-center md:mr-32 md:mt-0 md:justify-end">
-    <img src="/public/favico.png" width="200" height="150" />
+    <Image src={favico} draggable={"false"} loading={"eager"} alt="asd" format="png" class="h-[300px] w-[200px]" />
     <!-- <div
       class="hidden rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring hs-dark-mode-active:hidden dark:flex dark:ring-zinc-200 dark:focus:outline-none"
     >
