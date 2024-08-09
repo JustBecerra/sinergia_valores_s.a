@@ -2,15 +2,18 @@ import type { APIRoute } from "astro";
 import { Resend } from "resend";
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
-export const GET: APIRoute = async ({ params, request }) => {
-  const send = await resend.emails.send({
-    from: "solicitudes@sinergiavalores.com",
-    to: "solicitudes@sinergiavalores.com",
-    subject: "sample subject",
-    html: "<p>Hi</p>",
-    text: "Hi",
-  });
+export const POST: APIRoute = async ({ params, request }) => {
+  const body = await request.json();
+  const { to, from, html, subject, text, reply_to } = body;
 
+  const send = await resend.emails.send({
+    from,
+    to,
+    subject,
+    html,
+    text,
+    reply_to,
+  });
   if (send.data) {
     return new Response(
       JSON.stringify({
