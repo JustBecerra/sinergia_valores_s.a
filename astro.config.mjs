@@ -4,8 +4,9 @@ import vercelStatic from "@astrojs/vercel/static";
 import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
-
 import react from "@astrojs/react";
+
+import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
@@ -120,10 +121,12 @@ export default defineConfig({
     }),
     react(),
   ],
-  output: "static",
+  output: "server",
   experimental: {
     clientPrerender: true,
     directRenderScript: true,
   },
-  adapter: vercelStatic(),
+  adapter: node({
+    mode: "standalone",
+  }),
 });

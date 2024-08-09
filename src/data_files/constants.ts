@@ -6,7 +6,7 @@ export const SITE = {
   description:
     "Garantiza tu futuro hogar en segundos - Solicita una fianza con nosotros.",
   description_short: "Garantiza tu futuro hogar en segundos.",
-  url: "https://screwfast.uk",
+  url: "https://www.sinergiavalores.com",
   author: "Justo Becerra",
 };
 
