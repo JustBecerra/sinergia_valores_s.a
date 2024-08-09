@@ -29,7 +29,7 @@ export const EmailContactForm = ({ formSubTitle }: props) => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form method="POST" onSubmit={handleSubmit}>
       <div className="grid gap-4">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <label className="sr-only">Nombre</label>
