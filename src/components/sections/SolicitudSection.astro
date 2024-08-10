@@ -7,7 +7,8 @@ import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astr
 import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 import { handleSubmit } from "@/types/calculator";
-
+import { ToastContainer } from "react-toastify";
+import { SolicitudForm } from "./SolicitudForm";
 // Define the variables that will be used in this component
 const title: string = "Comience su solicitud";
 const subTitle: string = "";
@@ -17,6 +18,28 @@ const formSubTitle: string = "Nos estaremos comunicando con usted en breve";
 
 <!-- Start Your Aplication  -->
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+  <div class="mx-auto max-w-2xl lg:max-w-5xl">
+    <div class="text-center">
+      <ToastContainer client:load />
+      <h1 class="text-balance font-gotham text-2xl tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">
+        {title}
+      </h1>
+      <p class="mt-1 text-pretty font-nunito text-neutral-600 dark:text-neutral-400">
+        {subTitle}
+      </p>
+    </div>
+
+    <div class="mt-12 flex items-center justify-center">
+      <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
+        <h2 class="mb-8 text-center font-nunito text-xl text-neutral-700 dark:text-neutral-300">
+          {formTitle}
+        </h2>
+        <SolicitudForm formSubTitle={formSubTitle} client:load />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
   <div class="mx-auto max-w-2xl lg:max-w-5xl">
     <div class="text-center">
       <h1 class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">
@@ -30,11 +53,8 @@ const formSubTitle: string = "Nos estaremos comunicando con usted en breve";
     <div class="mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16">
       <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
         <h2 class="mb-8 text-center text-xl font-bold text-neutral-700 dark:text-neutral-300">
-          <!--Form reactive input forms-->
           {formTitle}
         </h2>
-        <!-- Form for user input with various input fields.-->
-        <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
         <form method="POST">
           <div class="centre grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -45,21 +65,16 @@ const formSubTitle: string = "Nos estaremos comunicando con usted en breve";
             </div>
             <TextInput id="hs-email-check" label="Ingrese Email" name="hs-mail-check" />
             <TextInput id="hs-email-check" label="Confirmar Email" name="hs-mail-check" />
-            <!-- <PhoneInput id="hs-phone-number" 
+    <PhoneInput id="hs-phone-number" 
               label="Numero de telefono"
               />-->
-          </div>
-          <div class="mt-4 grid">
-            <AuthBtn title="Iniciar Solicitud" />
-          </div>
 
-          <div class="mt-3 text-center">
-            <p class="text-sm text-neutral-600 dark:text-neutral-400">
-              {formSubTitle}
-            </p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- <div class="mt-4 grid">
+  <AuthBtn title="Iniciar Solicitud" />
+</div>
+
+<div class="mt-3 text-center">
+  <p class="text-sm text-neutral-600 dark:text-neutral-400">
+    {formSubTitle}
+  </p>
+</div> -->
