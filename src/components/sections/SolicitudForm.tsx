@@ -13,12 +13,47 @@ export const SolicitudForm = ({ formSubTitle }: Props) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const { nombre, apellido, email, numerodetelefono, consulta } =
+    const { nombre, apellido, email, confirmarEmail, tipo, NumeroDeDocumento } =
       Object.fromEntries(formData);
 
-    if (!nombre || !apellido || !email || !numerodetelefono || !consulta) {
+    if (
+      !nombre ||
+      !apellido ||
+      !email ||
+      !confirmarEmail ||
+      !tipo ||
+      !NumeroDeDocumento
+    ) {
       setHandleAlert(true);
       setIsSubmitting(false);
+      toast.warn("No ha completado todos los campos!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+      return;
+    }
+
+    if (confirmarEmail !== email) {
+      setHandleAlert(true);
+      setIsSubmitting(false);
+      toast.error("Las direcciones de mail no son iguales.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
       return;
     }
 
@@ -35,7 +70,7 @@ export const SolicitudForm = ({ formSubTitle }: Props) => {
           from: "solicitudes@sinergiavalores.com",
           to: "solicitudes@sinergiavalores.com",
           subject: `Consulta de parte de ${nombre} ${apellido}`,
-          text: `Email: ${email} - Número de teléfono: ${numerodetelefono} - Consulta: ${consulta}`,
+          text: `Email: ${email} - Tipo de solicitud: ${tipo} - Número de documento: ${NumeroDeDocumento}`,
           reply_to: email,
         }),
       });
@@ -60,21 +95,21 @@ export const SolicitudForm = ({ formSubTitle }: Props) => {
     }
   };
 
-  useEffect(() => {
-    if (handleAlert) {
-      toast.warn("No ha completado todos los campos!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-      });
-    }
-  }, [handleAlert]);
+  // useEffect(() => {
+  //   if (handleAlert) {
+  //     toast.warn("No ha completado todos los campos!", {
+  //       position: "top-center",
+  //       autoClose: 5000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: true,
+  //       draggable: true,
+  //       progress: undefined,
+  //       theme: "dark",
+  //       transition: Bounce,
+  //     });
+  //   }
+  // }, [handleAlert]);
 
   return (
     <form method="POST" onSubmit={handleSubmit}>
@@ -120,7 +155,7 @@ export const SolicitudForm = ({ formSubTitle }: Props) => {
         <label className="sr-only">Ingrese Email</label>
         <input
           type="email"
-          name="ingreseEmail"
+          name="email"
           id="hs-email-contacts"
           autoComplete="email"
           className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
