@@ -1,3 +1,1 @@
-const ecConfig = {};
-
-export { ecConfig as default };
+// Contents removed by Astro as it's used for prerendering only
