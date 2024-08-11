@@ -1,12 +1,12 @@
 /* empty css                                 */
-import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent, u as unescapeHTML, F as Fragment, f as renderSlot } from '../chunks/astro/server_DmtLvZrB.mjs';
+import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent, u as unescapeHTML, F as Fragment, e as renderSlot } from '../chunks/astro/server_Cp-G_wo0.mjs';
 import 'kleur/colors';
-import { $ as $$MainLayout } from '../chunks/MainLayout_D0uq4Eqi.mjs';
-import { $ as $$Image } from '../chunks/_astro_assets_BLHwhXC-.mjs';
-import { $ as $$PrimaryCTA } from '../chunks/PrimaryCTA_C2jXllz4.mjs';
+import { $ as $$MainLayout } from '../chunks/MainLayout_Bi9DI9P2.mjs';
+import { $ as $$Image } from '../chunks/_astro_assets_DJyipskQ.mjs';
+import { $ as $$PrimaryCTA } from '../chunks/PrimaryCTA_BPXjLui1.mjs';
 import 'clsx';
-import { $ as $$Icon } from '../chunks/Icon_ktFlVqUv.mjs';
-import { $ as $$AccordionItem } from '../chunks/AccordionItem_uBO0qgLI.mjs';
+import { $ as $$Icon } from '../chunks/Icon_BI_C3HZB.mjs';
+import { $ as $$AccordionItem } from '../chunks/AccordionItem_B9t3gShd.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro$8 = createAstro("https://sinergiavalores.com");

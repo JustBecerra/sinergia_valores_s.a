@@ -1,8 +1,8 @@
 /* empty css                                 */
-import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_DmtLvZrB.mjs';
+import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_Cp-G_wo0.mjs';
 import 'kleur/colors';
-import { q as questionsFrecuentes, $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_D0uq4Eqi.mjs';
-import { $ as $$AccordionItem } from '../chunks/AccordionItem_uBO0qgLI.mjs';
+import { q as questionsFrecuentes, $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_Bi9DI9P2.mjs';
+import { $ as $$AccordionItem } from '../chunks/AccordionItem_B9t3gShd.mjs';
 export { renderers } from '../renderers.mjs';
 
 var __freeze = Object.freeze;

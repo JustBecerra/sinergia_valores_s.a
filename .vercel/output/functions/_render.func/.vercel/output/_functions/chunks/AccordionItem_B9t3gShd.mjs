@@ -1,6 +1,6 @@
-import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent } from './astro/server_DmtLvZrB.mjs';
+import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent } from './astro/server_Cp-G_wo0.mjs';
 import 'kleur/colors';
-import { $ as $$Icon } from './Icon_ktFlVqUv.mjs';
+import { $ as $$Icon } from './Icon_BI_C3HZB.mjs';
 
 const $$Astro = createAstro("https://sinergiavalores.com");
 const $$AccordionItem = createComponent(($$result, $$props, $$slots) => {

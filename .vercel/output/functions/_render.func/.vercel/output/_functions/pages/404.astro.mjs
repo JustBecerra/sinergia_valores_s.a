@@ -1,8 +1,8 @@
 /* empty css                                 */
-import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent, e as renderScript } from '../chunks/astro/server_DmtLvZrB.mjs';
+import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent } from '../chunks/astro/server_Cp-G_wo0.mjs';
 import 'kleur/colors';
-import { $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_D0uq4Eqi.mjs';
-import { $ as $$Icon } from '../chunks/Icon_ktFlVqUv.mjs';
+import { $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_Bi9DI9P2.mjs';
+import { $ as $$Icon } from '../chunks/Icon_BI_C3HZB.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro = createAstro("https://sinergiavalores.com");
@@ -28,7 +28,7 @@ const $$404 = createComponent(($$result, $$props, $$slots) => {
           class="mb-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
         >
           {content}
-        </p> --> <!--Display a button that navigates user back to the previous page--> ${renderComponent($$result2, "Btn404", $$Btn404, { "title": btnTitle, "id": "go-back" })} </div> </div> </section> ` })} <!--JavaScript code that adds click event to the Button, resulting in going back to the previous page in history--> ${renderScript($$result, "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/pages/404.astro?astro&type=script&index=0&lang.ts")}`;
+        </p> --> <!--Display a button that navigates user back to the previous page--> ${renderComponent($$result2, "Btn404", $$Btn404, { "title": btnTitle, "id": "go-back" })} </div> </div> </section> ` })} <!--JavaScript code that adds click event to the Button, resulting in going back to the previous page in history--> `;
 }, "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/pages/404.astro", void 0);
 
 const $$file = "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/pages/404.astro";

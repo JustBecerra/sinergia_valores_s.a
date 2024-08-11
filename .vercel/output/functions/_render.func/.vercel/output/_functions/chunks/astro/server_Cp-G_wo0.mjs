@@ -1910,21 +1910,6 @@ function prerenderElementChildren(tag, children) {
   }
 }
 
-async function renderScript(result, id) {
-  if (result._metadata.renderedScripts.has(id)) return;
-  result._metadata.renderedScripts.add(id);
-  const inlined = result.inlinedScripts.get(id);
-  if (inlined != null) {
-    if (inlined) {
-      return markHTMLString(`<script type="module">${inlined}</script>`);
-    } else {
-      return "";
-    }
-  }
-  const resolved = await result.resolve(id);
-  return markHTMLString(`<script type="module" src="${resolved}"></script>`);
-}
-
 async function renderPage(result, componentFactory, props, children, streaming, route) {
   if (!isAstroComponentFactory(componentFactory)) {
     result._metadata.headInTree = result.componentMetadata.get(componentFactory.moduleId)?.containsHead ?? false;
@@ -2113,4 +2098,4 @@ function createVNode(type, props) {
   return vnode;
 }
 
-export { ASTRO_VERSION as A, REWRITE_DIRECTIVE_HEADER_VALUE as B, renderEndpoint as C, DEFAULT_404_COMPONENT as D, REROUTABLE_STATUS_CODES as E, Fragment as F, AstroJSX as G, createVNode as H, ROUTE_TYPE_HEADER as R, __astro_tag_component__ as _, createComponent as a, addAttribute as b, createAstro as c, renderComponent as d, renderScript as e, renderSlot as f, renderHead as g, renderUniqueStylesheet as h, renderScriptElement as i, createHeadAndContent as j, defineStyleVars as k, REROUTE_DIRECTIVE_HEADER as l, maybeRenderHead as m, createSlotValueFromString as n, renderSlotToString as o, renderJSX as p, chunkToString as q, renderTemplate as r, spreadAttributes as s, isRenderInstruction as t, unescapeHTML as u, clientLocalsSymbol as v, clientAddressSymbol as w, responseSentSymbol as x, renderPage as y, REWRITE_DIRECTIVE_HEADER_KEY as z };
+export { ASTRO_VERSION as A, renderEndpoint as B, REROUTABLE_STATUS_CODES as C, DEFAULT_404_COMPONENT as D, AstroJSX as E, Fragment as F, createVNode as G, ROUTE_TYPE_HEADER as R, __astro_tag_component__ as _, createComponent as a, addAttribute as b, createAstro as c, renderComponent as d, renderSlot as e, renderHead as f, renderUniqueStylesheet as g, renderScriptElement as h, createHeadAndContent as i, defineStyleVars as j, REROUTE_DIRECTIVE_HEADER as k, createSlotValueFromString as l, maybeRenderHead as m, renderSlotToString as n, renderJSX as o, chunkToString as p, isRenderInstruction as q, renderTemplate as r, spreadAttributes as s, clientLocalsSymbol as t, unescapeHTML as u, clientAddressSymbol as v, responseSentSymbol as w, renderPage as x, REWRITE_DIRECTIVE_HEADER_KEY as y, REWRITE_DIRECTIVE_HEADER_VALUE as z };

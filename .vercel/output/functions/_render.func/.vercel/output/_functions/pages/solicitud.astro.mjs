@@ -1,11 +1,11 @@
 /* empty css                                 */
-import { a as createComponent, r as renderTemplate, m as maybeRenderHead, d as renderComponent } from '../chunks/astro/server_DmtLvZrB.mjs';
+import { a as createComponent, r as renderTemplate, m as maybeRenderHead, d as renderComponent } from '../chunks/astro/server_Cp-G_wo0.mjs';
 import 'kleur/colors';
 import { toast, Bounce, ToastContainer } from 'react-toastify';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { useState } from 'react';
 /* empty css                                    */
-import { $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_D0uq4Eqi.mjs';
+import { $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_Bi9DI9P2.mjs';
 export { renderers } from '../renderers.mjs';
 
 const SolicitudForm = ({ formSubTitle }) => {
