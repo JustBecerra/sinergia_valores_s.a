@@ -1,5 +1,4 @@
-# build output
-dist/
+
 # generated types
 .astro/
 .idea/
@@ -13,7 +12,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
+.vercel
 # environment variables
 .env
 .env.production

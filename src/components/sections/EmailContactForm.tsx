@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Bounce, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-type props = {
+type Props = {
   formSubTitle: string;
 };
 
-export const EmailContactForm = ({ formSubTitle }: props) => {
+export const EmailContactForm = ({ formSubTitle }: Props) => {
+  const [handleAlert, setHandleAlert] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const { nombre, apellido, email, numerodetelefono, consulta } =
       Object.fromEntries(formData);
+
+    if (!nombre || !apellido || !email || !numerodetelefono || !consulta) {
+      setHandleAlert(true);
+      setIsSubmitting(false);
+      return;
+    }
+
+    setHandleAlert(false);
+    setIsSubmitting(true);
+
     try {
       const res = await fetch("/api/sendEmail.json", {
         method: "POST",
@@ -20,14 +35,47 @@ export const EmailContactForm = ({ formSubTitle }: props) => {
           from: "solicitudes@sinergiavalores.com",
           to: "solicitudes@sinergiavalores.com",
           subject: `Consulta de parte de ${nombre} ${apellido}`,
-          text: `Email: ${email} Número de telefono: ${numerodetelefono} - Consulta:${consulta}`,
+          text: `Email: ${email} - Número de teléfono: ${numerodetelefono} - Consulta: ${consulta}`,
           reply_to: email,
         }),
       });
+
+      if (res.ok) {
+        toast.success("Email enviado!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
+      }
     } catch (e) {
       console.log(e);
+    } finally {
+      setIsSubmitting(false);
     }
   };
+
+  useEffect(() => {
+    if (handleAlert) {
+      toast.warn("No ha completado todos los campos!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+    }
+  }, [handleAlert]);
+
   return (
     <form method="POST" onSubmit={handleSubmit}>
       <div className="grid gap-4">
@@ -79,6 +127,7 @@ export const EmailContactForm = ({ formSubTitle }: props) => {
       <div className="mt-4 grid">
         <button
           type="submit"
+          disabled={isSubmitting}
           className="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent bg-yellow-400 px-4 py-3 font-gotham text-sm text-neutral-700 outline-none ring-zinc-500 transition duration-300 hover:bg-yellow-500 focus-visible:ring disabled:pointer-events-none disabled:opacity-50 dark:text-white dark:ring-zinc-200 dark:focus:outline-none 2xl:text-base"
         >
           Enviar Mail
