@@ -1,5 +1,5 @@
-import { a as getImage } from '../chunks/_astro_assets_DJyipskQ.mjs';
-import { i as icon } from '../chunks/icon_BpBPyDj6.mjs';
+import { a as getImage } from '../chunks/_astro_assets_DqbubjyS.mjs';
+import { i as icon } from '../chunks/icon_CvjdsjOP.mjs';
 export { renderers } from '../renderers.mjs';
 
 const maskableIcon = new Proxy({"src":"/_astro/icon-maskable.C1A7b-dw.png","width":1024,"height":1024,"format":"png"}, {
@@ -8,7 +8,7 @@ const maskableIcon = new Proxy({"src":"/_astro/icon-maskable.C1A7b-dw.png","widt
 								return structuredClone(target);
 							}
 							if (name === 'fsPath') {
-								return "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/images/icon-maskable.png";
+								return "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/images/icon-maskable.png";
 							}
 							
 							return target[name];

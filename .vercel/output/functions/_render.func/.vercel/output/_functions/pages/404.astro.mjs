@@ -1,8 +1,8 @@
 /* empty css                                 */
 import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent } from '../chunks/astro/server_Cp-G_wo0.mjs';
 import 'kleur/colors';
-import { $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_Bi9DI9P2.mjs';
-import { $ as $$Icon } from '../chunks/Icon_BI_C3HZB.mjs';
+import { $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_Co1IU2OA.mjs';
+import { $ as $$Icon } from '../chunks/Icon_DKLocuo1.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro = createAstro("https://sinergiavalores.com");
@@ -17,7 +17,7 @@ const $$Btn404 = createComponent(($$result, $$props, $$slots) => {
   const fontSizeClasses = "2xl:text-base";
   const ringClasses = "dark:ring-zinc-200";
   return renderTemplate`<!-- Button with dynamic title, id, and optional arrow -->${maybeRenderHead()}<button${addAttribute(`${baseClasses} ${borderClasses} ${bgColorClasses} ${disableClasses} ${fontSizeClasses} ${ringClasses}`, "class")}${addAttribute(id, "id")}> ${title} <!-- Display the arrow based on the 'noArrow' property --> ${noArrow ? null : renderTemplate`${renderComponent($$result, "Icon", $$Icon, { "name": "arrowRight" })}`} </button>`;
-}, "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/components/ui/buttons/Btn404.astro", void 0);
+}, "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/components/ui/buttons/Btn404.astro", void 0);
 
 const $$404 = createComponent(($$result, $$props, $$slots) => {
   const pageTitle = `Page Not Found | ${SITE.title}`;
@@ -29,9 +29,9 @@ const $$404 = createComponent(($$result, $$props, $$slots) => {
         >
           {content}
         </p> --> <!--Display a button that navigates user back to the previous page--> ${renderComponent($$result2, "Btn404", $$Btn404, { "title": btnTitle, "id": "go-back" })} </div> </div> </section> ` })} <!--JavaScript code that adds click event to the Button, resulting in going back to the previous page in history--> `;
-}, "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/pages/404.astro", void 0);
+}, "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/pages/404.astro", void 0);
 
-const $$file = "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/pages/404.astro";
+const $$file = "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/pages/404.astro";
 const $$url = "/404";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

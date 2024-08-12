@@ -4,14 +4,14 @@ import 'kleur/colors';
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import { useState } from 'react';
 import { IoCalculatorSharp } from 'react-icons/io5';
-import { $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_Bi9DI9P2.mjs';
+import { $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_Co1IU2OA.mjs';
 export { renderers } from '../renderers.mjs';
 
 const calcularResultado = (rent, expenses, tipoAlquiler, duracionAlquiler) => {
   let total = 0;
   switch (tipoAlquiler) {
     case "temporal":
-      total = (rent + expenses) * 6 * 0.07;
+      total = (rent + expenses) * duracionAlquiler * 0.07;
       break;
     case "residencial":
       total = (rent + expenses) * duracionAlquiler * 0.07;
@@ -42,6 +42,18 @@ const calcularResultado = (rent, expenses, tipoAlquiler, duracionAlquiler) => {
     cuota50
   };
 };
+const getLastDayOfMonth = () => {
+  const date = /* @__PURE__ */ new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const lastDay = new Date(year, month, 0);
+  const formattedDate = lastDay.toLocaleDateString("es-AR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+  });
+  return formattedDate;
+};
 const CalcuSectionReact = () => {
   const [montoPromedio, setMontoPromedio] = useState("");
   const [montoExpensas, setMontoExpensas] = useState("");
@@ -54,9 +66,9 @@ const CalcuSectionReact = () => {
   const formSubTitle = "VALORES CALCULADOS EN BASE A LOS VALORES INGRESADOS. EL COSTO FINAL CORRESPONDERA AL CALCULO EN BASE A LOS VALORES DEFINITIVOS DEL CONTRATO DE ALQUILER.";
   const handleSubmit = (event) => {
     event.preventDefault();
-    const rent = Number(montoPromedio);
-    const expenses = Number(montoExpensas);
-    const duracionAlquilerNumber = Number(duracionAlquiler);
+    const rent = Number(montoPromedio) || 0;
+    const expenses = Number(montoExpensas) || 0;
+    const duracionAlquilerNumber = Number(duracionAlquiler) || 0;
     const newResultados = calcularResultado(
       rent,
       expenses,
@@ -65,6 +77,7 @@ const CalcuSectionReact = () => {
     );
     setResultados(newResultados);
   };
+  getLastDayOfMonth();
   return /* @__PURE__ */ jsx("section", { className: "mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14", children: /* @__PURE__ */ jsxs("div", { className: "mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16", children: [
     /* @__PURE__ */ jsxs("div", { className: "flex flex-col rounded-xl p-4 sm:p-6 lg:p-8", children: [
       /* @__PURE__ */ jsxs("h1", { className: "space-xs-2 mb-6 flex items-center justify-center gap-4 text-2xl font-bold tracking-wider text-black", children: [
@@ -179,8 +192,8 @@ const CalcuSectionReact = () => {
             ] })
           ] }),
           /* @__PURE__ */ jsxs("p", { className: "flex items-center justify-between", children: [
-            /* @__PURE__ */ jsx("span", { className: "font-nunito", children: "Total costo por servicio:" }),
-            /* @__PURE__ */ jsxs("span", { id: "totalCosto", className: "font-nunito", children: [
+            /* @__PURE__ */ jsx("span", { className: "font-medium", children: "Total costo por servicio:" }),
+            /* @__PURE__ */ jsxs("span", { id: "totalCosto", children: [
               "$",
               resultados.resultadoMenosDiezPorciento
             ] })
@@ -248,9 +261,9 @@ const CalcuSectionReact = () => {
 const $$Calculadora = createComponent(($$result, $$props, $$slots) => {
   const pageTitle = `Calculadora | ${SITE.title}`;
   return renderTemplate`<!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->${renderComponent($$result, "MainLayout", $$MainLayout, { "title": pageTitle }, { "default": ($$result2) => renderTemplate`  ${renderComponent($$result2, "CalcuSectionReact", CalcuSectionReact, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/sections/CalcuSectionReact", "client:component-export": "default" })} ` })}`;
-}, "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/pages/calculadora.astro", void 0);
+}, "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/pages/calculadora.astro", void 0);
 
-const $$file = "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/pages/calculadora.astro";
+const $$file = "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/pages/calculadora.astro";
 const $$url = "/calculadora";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

@@ -5,7 +5,7 @@ import { toast, Bounce, ToastContainer } from 'react-toastify';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { useState } from 'react';
 /* empty css                                    */
-import { $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_Bi9DI9P2.mjs';
+import { $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_Co1IU2OA.mjs';
 export { renderers } from '../renderers.mjs';
 
 const SolicitudForm = ({ formSubTitle }) => {
@@ -176,15 +176,15 @@ const $$SolicitudSection = createComponent(($$result, $$props, $$slots) => {
   const subTitle = "";
   const formTitle = "Complete el formulario de solicitud";
   const formSubTitle = "Nos estaremos comunicando con usted en breve";
-  return renderTemplate`<!-- Start Your Aplication  -->${maybeRenderHead()}<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14"> <div class="mx-auto max-w-2xl lg:max-w-5xl"> <div class="text-center"> ${renderComponent($$result, "ToastContainer", ToastContainer, { "client:load": true, "client:component-hydration": "load", "client:component-path": "react-toastify", "client:component-export": "ToastContainer" })} <h1 class="text-balance font-gotham text-2xl tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"> ${title} </h1> <p class="mt-1 text-pretty font-nunito text-neutral-600 dark:text-neutral-400"> ${subTitle} </p> </div> <div class="mt-12 flex items-center justify-center"> <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8"> <h2 class="mb-8 text-center font-nunito text-xl text-neutral-700 dark:text-neutral-300"> ${formTitle} </h2> ${renderComponent($$result, "SolicitudForm", SolicitudForm, { "formSubTitle": formSubTitle, "client:load": true, "client:component-hydration": "load", "client:component-path": "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/components/sections/SolicitudForm", "client:component-export": "SolicitudForm" })} </div> </div> </div> </section>`;
-}, "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/components/sections/SolicitudSection.astro", void 0);
+  return renderTemplate`<!-- Start Your Aplication  -->${maybeRenderHead()}<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14"> <div class="mx-auto max-w-2xl lg:max-w-5xl"> <div class="text-center"> ${renderComponent($$result, "ToastContainer", ToastContainer, { "client:load": true, "client:component-hydration": "load", "client:component-path": "react-toastify", "client:component-export": "ToastContainer" })} <h1 class="text-balance font-gotham text-2xl tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"> ${title} </h1> <p class="mt-1 text-pretty font-nunito text-neutral-600 dark:text-neutral-400"> ${subTitle} </p> </div> <div class="mt-12 flex items-center justify-center"> <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8"> <h2 class="mb-8 text-center font-nunito text-xl text-neutral-700 dark:text-neutral-300"> ${formTitle} </h2> ${renderComponent($$result, "SolicitudForm", SolicitudForm, { "formSubTitle": formSubTitle, "client:load": true, "client:component-hydration": "load", "client:component-path": "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/components/sections/SolicitudForm", "client:component-export": "SolicitudForm" })} </div> </div> </div> </section>`;
+}, "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/components/sections/SolicitudSection.astro", void 0);
 
 const $$Solicitud = createComponent(($$result, $$props, $$slots) => {
   const pageTitle = `Solicitud | ${SITE.title}`;
   return renderTemplate`<!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->${renderComponent($$result, "MainLayout", $$MainLayout, { "title": pageTitle }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "SolicitudSection", $$SolicitudSection, {})} ` })}`;
-}, "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/pages/solicitud.astro", void 0);
+}, "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/pages/solicitud.astro", void 0);
 
-const $$file = "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/pages/solicitud.astro";
+const $$file = "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/pages/solicitud.astro";
 const $$url = "/solicitud";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

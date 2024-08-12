@@ -1,8 +1,8 @@
 /* empty css                                 */
 import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_Cp-G_wo0.mjs';
 import 'kleur/colors';
-import { q as questionsFrecuentes, $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_Bi9DI9P2.mjs';
-import { $ as $$AccordionItem } from '../chunks/AccordionItem_B9t3gShd.mjs';
+import { q as questionsFrecuentes, $ as $$MainLayout, S as SITE } from '../chunks/MainLayout_Co1IU2OA.mjs';
+import { $ as $$AccordionItem } from '../chunks/AccordionItem_DJU6bh84.mjs';
 export { renderers } from '../renderers.mjs';
 
 var __freeze = Object.freeze;
@@ -16,14 +16,14 @@ const $$QuestionsSection = createComponent(($$result, $$props, $$slots) => {
     let collapseId = makeId("hs-basic-with-title-and-arrow-stretched-collapse", i);
     return renderTemplate`${renderComponent($$result, "AccordionItem", $$AccordionItem, { ...question, "id": id, "collapseId": collapseId, "first": i === 0 })}`;
   }));
-}, "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/components/sections/QuestionsSection.astro", void 0);
+}, "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/components/sections/QuestionsSection.astro", void 0);
 
 const $$Ayuda = createComponent(($$result, $$props, $$slots) => {
   const pageTitle = `Arrepentimiento | ${SITE.title}`;
   return renderTemplate`${renderComponent($$result, "MainLayout", $$MainLayout, { "title": pageTitle }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "QuestionsSection", $$QuestionsSection, {})} ` })}`;
-}, "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/pages/ayuda.astro", void 0);
+}, "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/pages/ayuda.astro", void 0);
 
-const $$file = "C:/Users/Justo/Desktop/sinergia_valores_s.a/src/pages/ayuda.astro";
+const $$file = "C:/Users/NICO/Desktop/Diegote/sinergia_valores_s.a/src/pages/ayuda.astro";
 const $$url = "/ayuda";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
