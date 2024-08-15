@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IoCalculatorSharp } from "react-icons/io5";
+
 interface CalculationResult {
   resultadoNormal: string;
   resultadoMenosDiezPorciento: string;
@@ -13,13 +14,13 @@ const calcularResultado = (
   rent: number,
   expenses: number,
   tipoAlquiler: string,
-  duracionAlquiler: number,
+  duracionAlquiler: number
 ): CalculationResult => {
   let total = 0;
 
   switch (tipoAlquiler) {
     case "temporal":
-      total = (rent + expenses) * 6 * 0.07;
+      total = (rent + expenses) * duracionAlquiler * 0.07;
       break;
     case "residencial":
       total = (rent + expenses) * duracionAlquiler * 0.07;
@@ -54,15 +55,30 @@ const calcularResultado = (
   };
 };
 
+const getLastDayOfMonth = () => {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1; // Los meses son base 0 en JavaScript
+
+  const lastDay = new Date(year, month, 0); // El día 0 del siguiente mes es el último día del mes actual
+  const formattedDate = lastDay.toLocaleDateString("es-AR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+
+  return formattedDate;
+};
+
 const CalcuSectionReact: React.FC = () => {
   const [montoPromedio, setMontoPromedio] = useState<number | "">("");
   const [montoExpensas, setMontoExpensas] = useState<number | "">("");
   const [tipoAlquiler, setTipoAlquiler] = useState<string>("");
   const [duracionAlquiler, setDuracionAlquiler] = useState<number | "">("");
-
   const [resultados, setResultados] = useState<CalculationResult>(
     calcularResultado(0, 0, "", 0),
   );
+
 
   const formTitle: string = "CALCULADORA";
   const formSubTitle: string =
@@ -71,18 +87,20 @@ const CalcuSectionReact: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const rent = Number(montoPromedio);
-    const expenses = Number(montoExpensas);
-    const duracionAlquilerNumber = Number(duracionAlquiler);
+    const rent = Number(montoPromedio) || 0;
+    const expenses = Number(montoExpensas) || 0;
+    const duracionAlquilerNumber = Number(duracionAlquiler) || 0;
 
     const newResultados = calcularResultado(
       rent,
       expenses,
       tipoAlquiler,
-      duracionAlquilerNumber,
+      duracionAlquilerNumber
     );
     setResultados(newResultados);
   };
+
+  const promocionValidaHasta = getLastDayOfMonth();
 
   return (
     <section className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
@@ -219,10 +237,8 @@ const CalcuSectionReact: React.FC = () => {
                 </span>
               </p>
               <p className="flex items-center justify-between">
-                <span className="font-nunito">Total costo por servicio:</span>
-                <span id="totalCosto" className="font-nunito">
-                  ${resultados.resultadoMenosDiezPorciento}
-                </span>
+                <span className="font-medium">Total costo por servicio:</span>
+                <span id="totalCosto">${resultados.resultadoMenosDiezPorciento}</span>
               </p>
             </div>
             <p className="mt-2 font-nunito text-sm">
