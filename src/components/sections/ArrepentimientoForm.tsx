@@ -1,7 +1,7 @@
 import { ArrepentimientoFormInfo } from "@/data_files/constants";
 import React, { useEffect, useState } from "react";
 import { Bounce, toast } from "react-toastify";
-
+import "react-toastify/dist/ReactToastify.css";
 export const ArrepentimientoForm = () => {
   const [handleAlert, setHandleAlert] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -17,10 +17,17 @@ export const ArrepentimientoForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const { nombre, apellido, email, numerodetelefono, consulta } =
+    const { name, nacionality, mail, idnumber, phonenumber, serviceorproduct } =
       Object.fromEntries(formData);
 
-    if (!nombre || !apellido || !email || !numerodetelefono || !consulta) {
+    if (
+      !name ||
+      !nacionality ||
+      !mail ||
+      !idnumber ||
+      !phonenumber ||
+      !serviceorproduct
+    ) {
       setHandleAlert(true);
       setIsSubmitting(false);
       return;
@@ -38,9 +45,9 @@ export const ArrepentimientoForm = () => {
         body: JSON.stringify({
           from: "solicitudes@sinergiavalores.com",
           to: "solicitudes@sinergiavalores.com",
-          subject: `Consulta de parte de ${nombre} ${apellido}`,
-          text: `Email: ${email} - Número de teléfono: ${numerodetelefono} - Consulta: ${consulta}`,
-          reply_to: email,
+          subject: `Arrepentimiento`,
+          text: `Nombre completo: ${name} - Nacionalidad: ${nacionality} - Dirección de mail: ${mail} - Número de documento: ${idnumber} - Número de teléfono: ${phonenumber} - Servicio o producto: ${serviceorproduct}`,
+          reply_to: mail,
         }),
       });
 
@@ -80,12 +87,16 @@ export const ArrepentimientoForm = () => {
     }
   }, [handleAlert]);
   return (
-    <form method="POST" className="grid grid-cols-1 gap-10 md:grid-cols-2">
+    <form
+      method="POST"
+      onSubmit={handleSubmit}
+      className="grid grid-cols-1 gap-10 md:grid-cols-2"
+    >
       <div>
         <label className="sr-only">{name}</label>
         <input
           type="text"
-          name={name}
+          name="name"
           id={name}
           className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
           placeholder={name}
@@ -144,6 +155,7 @@ export const ArrepentimientoForm = () => {
       <div className="col-span-2 flex justify-center">
         <button
           type="submit"
+          disabled={isSubmitting}
           className="inline-flex w-[20rem] items-center justify-center gap-x-2 rounded-lg bg-yellow-500 px-4 py-3 font-nunito text-sm text-neutral-600 outline-none ring-zinc-500 transition duration-300 focus-visible:ring dark:text-neutral-50"
         >
           {sendtext}
