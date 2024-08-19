@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IoCalculatorSharp } from "react-icons/io5";
 
 interface CalculationResult {
+  total: number
   resultadoNormal: string;
   resultadoMenosDiezPorciento: string;
   anticipo25: string;
@@ -46,12 +47,14 @@ const calcularResultado = (
   const cuota50 = numberFormatter.format((total * 0.5) / 6);
 
   return {
+    total,
     resultadoNormal,
     resultadoMenosDiezPorciento,
     anticipo25,
     cuota25,
     anticipo50,
     cuota50,
+
   };
 };
 
@@ -243,12 +246,12 @@ const CalcuSectionReact: React.FC = () => {
           <span className="font-medium">Costo original del Servicio:</span>
           <span id="costoOriginal">${resultados.resultadoNormal}</span>
         </p>
-        <p className="flex items-center justify-between">
-          <span className="font-medium">Descuento 10%:</span>
-          <span id="descuentoValor">
-            ${(Number(resultados.resultadoNormal) - Number(resultados.resultadoMenosDiezPorciento)).toFixed(0)}
-          </span>
-        </p>
+      <p className="flex items-center justify-between">
+        <span className="font-medium">Descuento 10%:</span>
+        <span id="descuentoValor">
+        ${new Intl.NumberFormat('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(resultados.total * 0.1)}  
+        </span>
+</p>
         <p className="flex items-center justify-between">
           <span className="font-medium">Total costo por servicio:</span>
           <span id="totalCosto">${resultados.resultadoMenosDiezPorciento}</span>
