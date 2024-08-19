@@ -2,7 +2,7 @@
 # generated types
 .astro/
 .idea/
-.vercel/
+
 
 # dependencies
 node_modules/

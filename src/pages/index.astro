@@ -16,6 +16,10 @@ import parejita from "@images/parejita.png";
 import alquilerseguro from "@images/alquilerseguro.png";
 import CompaniesAttached from "@/components/sections/CompaniesAttached.astro";
 import DollarSection from "@/components/sections/landing/DollarSection.tsx";
+import calcuEle from "@images/calcuEle.jpeg";
+import familiaEle from "@images/familiaEle.jpeg";
+import casaEle from "@images/casaEle.jpeg";
+import { fade } from "astro:transitions";
 ---
 
 <MainLayout>
@@ -27,7 +31,7 @@ import DollarSection from "@/components/sections/landing/DollarSection.tsx";
       primaryBtn="Solicita tu fianza"
       primaryBtnURL="/solicitud"
       secondaryBtn="Calcula costos"
-      secondaryBtnURL="/contacto"
+      secondaryBtnURL="/calculadora"
       withReview={true}
       rating=`<span class="font-bold">4.8</span> / 5`
       starCount={4}
@@ -45,7 +49,7 @@ import DollarSection from "@/components/sections/landing/DollarSection.tsx";
           heading: "Calcula Gratis",
           content: "Descubre el costo de tu fianza sin compromiso. Calcula ahora mismo de manera rápida y gratuita.",
           svg: "tools",
-          src: calculatingcosts,
+          src: calcuEle,
           alt: "Descubre el costo de tu fianza sin compromiso. Calcula ahora mismo de manera rápida y gratuita.",
           first: true,
         },
@@ -53,7 +57,7 @@ import DollarSection from "@/components/sections/landing/DollarSection.tsx";
           heading: "Solicita Tu Fianza",
           content: "Obtén tu fianza de manera fácil y rápida. Completa el formulario y recibe tu fianza al instante.",
           svg: "dashboard",
-          src: parejita,
+          src: familiaEle,
           alt: "Obtén tu fianza de manera fácil y rápida. Completa el formulario y recibe tu fianza al instante.",
           second: true,
         },
@@ -61,7 +65,7 @@ import DollarSection from "@/components/sections/landing/DollarSection.tsx";
           heading: "Alquila Seguro",
           content: "Protege tu inversión con nuestra fianza de alquiler. Alquila seguro y sin preocupaciones.",
           svg: "house",
-          src: alquilerseguro,
+          src: casaEle,
           alt: "Protege tu inversión con nuestra fianza de alquiler. Alquila seguro y sin preocupaciones.",
         },
       ]}
