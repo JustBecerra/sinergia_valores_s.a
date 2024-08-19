@@ -1,10 +1,10 @@
 import type { APIRoute, ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
 import icon from "@images/icon.png";
-import maskableIcon from "@images/icon-maskable.png";
+import maskableIcon from "@images/favico.png";
 
 interface Favicon {
-  purpose: 'any' | 'maskable' | 'monochrome';
+  purpose: "any" | "maskable" | "monochrome";
   src: ImageMetadata;
   sizes: number[];
 }
@@ -12,15 +12,15 @@ interface Favicon {
 const sizes = [192, 512];
 const favicons: Favicon[] = [
   {
-    purpose: 'any',
+    purpose: "any",
     src: icon,
     sizes,
   },
   {
-    purpose: 'maskable',
+    purpose: "maskable",
     src: maskableIcon,
     sizes,
-   },
+  },
 ];
 
 export const GET: APIRoute = async () => {
@@ -44,8 +44,8 @@ export const GET: APIRoute = async () => {
   );
 
   const manifest = {
-    short_name: "ScrewFast",
-    name: "ScrewFast",
+    short_name: "Sinergia Valores",
+    name: "Sinergia Valores S.A.",
     icons,
     display: "minimal-ui",
     id: "/",
