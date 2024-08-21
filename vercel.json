@@ -1,5 +1,4 @@
 {
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api/$1" }],
   "headers": [
     {
       "source": "/(.*)",
@@ -16,6 +15,7 @@
           "key": "Referrer-Policy",
           "value": "no-referrer-when-downgrade"
         },
+
         {
           "key": "X-Frame-Options",
           "value": "SAMEORIGIN"
