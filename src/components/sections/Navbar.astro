@@ -176,17 +176,27 @@ import WhatsAppRedirect from "./WhatsAppRedirect.astro";
     });
   });
   // Function to update the logo based on the current theme
-  function updateLogo() {
-    const brandLogo = document.getElementById("brand-logo");
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    brandLogo.src = isDarkMode ? "{darkModeLogo}" : "{lightModeLogo}";
-  }
+  // function updateLogo() {
+  //   const brandLogo = document.getElementById("brand-logo");
+  //   if (brandLogo) {
+  //     const isDarkMode = document.documentElement.classList.contains("dark");
+
+  //     // Define paths to your logos
+  //     const darkModeLogo = "/path/to/dark-mode-logo.png"; // Replace with actual path
+  //     const lightModeLogo = "/path/to/light-mode-logo.png"; // Replace with actual path
+
+  //     // Update the logo source based on the mode
+  //     brandLogo.src = isDarkMode ? darkModeLogo : lightModeLogo;
+  //   } else {
+  //     console.error('Element with ID "brand-logo" not found.');
+  //   }
+  // }
 
   // Initial logo update
-  updateLogo();
+  // updateLogo();
 
   // Update the logo when the theme changes
-  window.addEventListener("on-hs-appearance-change", updateLogo);
+  // window.addEventListener("on-hs-appearance-change", updateLogo);
 </script>
 <!--Import the necessary Collapse and Overlay plugins-->
 <!--https://preline.co/plugins/html/collapse.html-->

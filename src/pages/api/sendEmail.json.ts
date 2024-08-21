@@ -14,6 +14,7 @@ export const POST: APIRoute = async ({ params, request }) => {
     text,
     reply_to,
   });
+  console.log({send})
   if (send.data) {
     return new Response(
       JSON.stringify({
