@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Bounce, toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
 import "react-toastify/dist/ReactToastify.css";
 
 type Props = {
@@ -9,6 +10,9 @@ type Props = {
 export const EmailContactForm = ({ formSubTitle }: Props) => {
   const [handleAlert, setHandleAlert] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const serviceID = import.meta.env.PUBLIC_EMAIL_JS_SERVICE_ID;
+  const templateID = import.meta.env.PUBLIC_EMAIL_JS_TEMPLATE_ID;
+  const publicKey = import.meta.env.PUBLIC_EMAIL_JS_PUBLIC_KEY;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -26,21 +30,24 @@ export const EmailContactForm = ({ formSubTitle }: Props) => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("/api/sendEmail.json", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const result = await emailjs.send(
+        serviceID,
+        templateID,
+        {
+          nombre,
+          apellido,
+          email,
+          numerodetelefono,
+          consulta,
+          from_name: `${nombre} ${apellido}`,
+          to_name: "Sinergia Valores",
+          from_email: email,
+          message: consulta,
         },
-        body: JSON.stringify({
-          from: "solicitudes@sinergiavalores.com",
-          to: "solicitudes@sinergiavalores.com",
-          subject: `Consulta de parte de ${nombre} ${apellido}`,
-          text: `Email: ${email} - Número de teléfono: ${numerodetelefono} - Consulta: ${consulta}`,
-          reply_to: email,
-        }),
-      });
+        publicKey, // Your EmailJS Public Key
+      );
 
-      if (res.ok) {
+      if (result.status === 200) {
         toast.success("Email enviado!", {
           position: "top-center",
           autoClose: 5000,
@@ -55,6 +62,17 @@ export const EmailContactForm = ({ formSubTitle }: Props) => {
       }
     } catch (e) {
       console.log(e);
+      toast.error("Failed to send email!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
     } finally {
       setIsSubmitting(false);
     }
