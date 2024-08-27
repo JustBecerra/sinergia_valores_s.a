@@ -27,6 +27,16 @@ const formSubTitle: string = "Nos estaremos comunicando con usted en breve";
           {formTitle}
         </h2>
         <SolicitudForm formSubTitle={formSubTitle} client:load />
+         <!-- Botón de descarga -->
+         <div class="mt-8 text-center">
+          <a 
+            href="/files/mi-archivo.pdf" 
+            download 
+            class="inline-block bg-yellow-400 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors transform hover:scale-105"
+          >
+            Contrato de adhesión
+          </a>
+        </div>
       </div>
     </div>
   </div>
