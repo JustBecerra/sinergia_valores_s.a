@@ -32,10 +32,10 @@ export const EmailContactForm = ({ formSubTitle }: Props) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "solicitudes@sinergiavalores.com",
-          to: "solicitudes@sinergiavalores.com",
+          from: `${email}`,
+          to: "contacto@sinergiavalores.com",
           subject: `Consulta de parte de ${nombre} ${apellido}`,
-          text: `Email: ${email} - Número de teléfono: ${numerodetelefono} - Consulta: ${consulta}`,
+          text: `Número de teléfono: ${numerodetelefono} - Consulta: ${consulta}`,
           reply_to: email,
         }),
       });
