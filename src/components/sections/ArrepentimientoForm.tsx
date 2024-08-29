@@ -43,10 +43,18 @@ export const ArrepentimientoForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: `${mail}`,
+          // from: `${mail}`,
+          from: `arrepentimiento@sinergiavalores.com`,
           to: "arrepentimiento@sinergiavalores.com",
           subject: `Arrepentimiento`,
-          text: `Nombre completo: ${name} - Nacionalidad: ${nacionality} - Número de documento: ${idnumber} - Número de teléfono: ${phonenumber} - Servicio o producto: ${serviceorproduct}`,
+          html: `<ul>
+            <li>Dirección de email: ${mail}</li>
+            <li>Nombre completo: ${name}</li>
+            <li>Nacionalidad: ${nacionality}</li>
+            <li>Número de documento: ${idnumber}</li>
+            <li>Número de teléfono: ${phonenumber}</li>
+            <li>Servicio o producto: ${serviceorproduct}</li>
+          </ul>`,
           reply_to: mail,
         }),
       });

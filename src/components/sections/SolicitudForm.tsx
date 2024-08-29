@@ -79,10 +79,12 @@ export const SolicitudForm = ({ formSubTitle }: Props) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: `${email}`,
+          // from: `${email}`,
+          from: `solicitudes@sinergiavalores.com`,
           to: "solicitudes@sinergiavalores.com",
           subject: `Consulta de parte de ${nombre} ${apellido}`,
           html: `<ul>
+            <li>Dirección de email: ${email}}</li>
             <li>Tipo de solicitud: ${tipo}</li>
             <li>Número de documento/pasaporte: ${NumeroDeDocumento}</li>
             <li>Nacionalidad: ${nacionalidad}</li>
@@ -91,7 +93,6 @@ export const SolicitudForm = ({ formSubTitle }: Props) => {
             <li>Zona de alquiler: ${zonaAlquiler}</li>
             <li>Como nos conocio: ${comoNosConocio}</li>
           </ul>`,
-          // text: `Tipo de solicitud: ${tipo} - Número de documento/pasaporte: ${NumeroDeDocumento} - Nacionalidad: ${nacionalidad} - Número de telefono: ${numeroTelefono} - Nombre de inmobiliaria: ${nombreInmobiliaria} - Zona de alquiler: ${zonaAlquiler} - Como nos conocio: ${comoNosConocio}`,
           reply_to: email,
         }),
       });
@@ -232,7 +233,7 @@ export const SolicitudForm = ({ formSubTitle }: Props) => {
           </option>
           <option value="internet">Internet</option>
           <option value="recomendacion">Recomendación</option>
-          <option value="redesSociales">Redes Sociales</option>
+          <option value="redes sociales">Redes Sociales</option>
           <option value="otros">Otros</option>
         </select>
       </div>
