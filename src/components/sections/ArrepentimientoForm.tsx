@@ -43,10 +43,18 @@ export const ArrepentimientoForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: `${mail}`,
+          // from: `${mail}`,
+          from: `arrepentimiento@sinergiavalores.com`,
           to: "arrepentimiento@sinergiavalores.com",
           subject: `Arrepentimiento`,
-          text: `Nombre completo: ${name} - Nacionalidad: ${nacionality} - Número de documento: ${idnumber} - Número de teléfono: ${phonenumber} - Servicio o producto: ${serviceorproduct}`,
+          html: `<ul>
+            <li>Dirección de email: ${mail}</li>
+            <li>Nombre completo: ${name}</li>
+            <li>Nacionalidad: ${nacionality}</li>
+            <li>Número de documento: ${idnumber}</li>
+            <li>Número de teléfono: ${phonenumber}</li>
+            <li>Servicio o producto: ${serviceorproduct}</li>
+          </ul>`,
           reply_to: mail,
         }),
       });
@@ -87,12 +95,8 @@ export const ArrepentimientoForm = () => {
     }
   }, [handleAlert]);
   return (
-    <form
-      method="POST"
-      onSubmit={handleSubmit}
-      className="grid grid-cols-1 gap-10 md:grid-cols-2"
-    >
-      <div>
+    <form method="POST" onSubmit={handleSubmit}>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <label className="sr-only">{name}</label>
         <input
           type="text"
@@ -101,8 +105,6 @@ export const ArrepentimientoForm = () => {
           className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
           placeholder={name}
         />
-      </div>
-      <div>
         <label className="sr-only">{nacionality}</label>
         <input
           type="text"
@@ -111,8 +113,6 @@ export const ArrepentimientoForm = () => {
           className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
           placeholder={nacionality}
         />
-      </div>
-      <div>
         <label className="sr-only">{idnumber}</label>
         <input
           type="text"
@@ -121,8 +121,6 @@ export const ArrepentimientoForm = () => {
           className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
           placeholder={idnumber}
         />
-      </div>
-      <div>
         <label className="sr-only">{phonenumber}</label>
         <input
           type="text"
@@ -131,8 +129,6 @@ export const ArrepentimientoForm = () => {
           className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
           placeholder={phonenumber}
         />
-      </div>
-      <div>
         <label className="sr-only">{mail}</label>
         <input
           type="text"
@@ -141,8 +137,6 @@ export const ArrepentimientoForm = () => {
           className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
           placeholder={mail}
         />
-      </div>
-      <div>
         <label className="sr-only">{serviceorproduct}</label>
         <input
           type="text"
@@ -152,7 +146,7 @@ export const ArrepentimientoForm = () => {
           placeholder={serviceorproduct}
         />
       </div>
-      <div className="col-span-2 flex justify-center">
+      <div className="col-span-2 mt-4 flex justify-center">
         <button
           type="submit"
           disabled={isSubmitting}
