@@ -35,7 +35,7 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
           // from: `${email}`,
           from: `incumplimiento@sinergiavalores.com`,
           to: "incumplimiento@sinergiavalores.com",
-          subject: `Consulta de parte de ${nombre} ${apellido}`,
+          subject: `Incumplimiento de parte de ${nombre} ${apellido}`,
           html: `<ul>
             <li>Email: ${email}</li>
             <li>Número de teléfono: ${numerodetelefono}</li>
@@ -84,7 +84,7 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
   return (
     <form method="POST" onSubmit={handleSubmit}>
       <div className="flex flex-col justify-between gap-16 md:flex-row md:flex-wrap">
-        <div className="grid gap-4">
+        <div className="grid h-full gap-4">
           <h1 className="text-balance text-center font-gotham text-xl tracking-tight text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight">
             Datos Propietario
           </h1>
@@ -165,7 +165,7 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
           />
         </div>
 
-        <div className="flex grid gap-4">
+        <div className="grid h-full gap-4">
           <h1 className="text-balance text-center font-gotham text-xl tracking-tight text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight">
             Datos Propiedad
           </h1>
@@ -264,7 +264,7 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
           />
         </div>
 
-        <div className="flex grid gap-4">
+        <div className="grid h-full gap-4">
           <h1 className="text-balance text-center font-gotham text-xl tracking-tight text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight">
             Datos Inquilino
           </h1>
