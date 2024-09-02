@@ -37,8 +37,8 @@ function getAccordionClass(first: boolean = false) {
   <!-- The collapsible content of the accordion -->
   <div aria-labelledby={id} class={`${first ? ACCORDION_CONTENT_CLASS : "hidden " + ACCORDION_CONTENT_CLASS}`} id={collapseId}>
     <!-- The content paragraph -->
-    <p class="text-pretty font-nunito text-neutral-600 dark:text-neutral-400">
-      {answer}
+    <p class="text-pretty font-nunito text-neutral-600 dark:text-neutral-400" set:html={answer}>
+      <!-- {answer} -->
     </p>
   </div>
 </div>
