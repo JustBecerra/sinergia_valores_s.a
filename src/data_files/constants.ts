@@ -123,7 +123,7 @@ export const questionsFrecuentes = [
   {
     question:
       "¿COMO SE GESTIONA EL RECLAMO ANTE INCUMPLIMIENTO POR PARTE DEL INQUILINO?",
-    answer: `SE REALIZA POR MEDIO DE LA PAGINA DE SINERGIA VALORES S.A. (VINCULO PLANILLA POR INCUMPLIMIENTO).`,
+    answer: `SE REALIZA POR MEDIO DE LA PAGINA DE SINERGIA VALORES S.A. <a class="text-balance font-gotham text-neutral-800 hover:text-neutral-500 dark:text-neutral-200 dark:hover:text-neutral-400" href="/incumplimiento">Incumplimiento</a>`,
   },
   {
     question:
