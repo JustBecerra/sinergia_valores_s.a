@@ -4,16 +4,23 @@ const navBarLinks = [
   { name: "Ayuda", url: "/ayuda" },
   { name: "Calculadora", url: "/calculadora" },
   { name: "Contacto", url: "/contacto" },
+  { name: "Incumplimiento", url: "/incumplimiento" },
 ];
 
 const footerLinks = [
   {
     section: "Redes Sociales",
     links: [
-      { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61561059611052&mibextid=LQQJ4d" },
+      {
+        name: "Facebook",
+        url: "https://www.facebook.com/profile.php?id=61561059611052&mibextid=LQQJ4d",
+      },
       { name: "Twitter", url: "https://twitter.com/" },
       { name: "Instagram", url: "https://www.instagram.com/sinergiavalores/" },
-      { name: "Tiktok", url: "https://www.tiktok.com/@sinergia.valores?_t=8o3X7xTxBri&_r=1" },
+      {
+        name: "Tiktok",
+        url: "https://www.tiktok.com/@sinergia.valores?_t=8o3X7xTxBri&_r=1",
+      },
     ],
   },
   {
