@@ -83,92 +83,240 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
 
   return (
     <form method="POST" onSubmit={handleSubmit}>
-      <div className="flex grid gap-4">
-        <h1 className="text-balance text-center font-gotham text-xl tracking-tight text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight">
-          Datos Propietario
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <label className="sr-only">Nombre</label>
+      <div className="flex flex-col justify-between gap-16 md:flex-row md:flex-wrap">
+        <div className="grid gap-4">
+          <h1 className="text-balance text-center font-gotham text-xl tracking-tight text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight">
+            Datos Propietario
+          </h1>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <label className="sr-only">Nombre</label>
+            <input
+              type="text"
+              name="nombre"
+              id="hs-firstname-contacts"
+              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              placeholder="Nombre"
+            />
+            <label className="sr-only">Apellido</label>
+            <input
+              type="text"
+              name="apellido"
+              id="hs-lastname-contacts"
+              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              placeholder="Apellido"
+            />
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <label className="sr-only">Tipo</label>
+            <select
+              name="tipo"
+              id="hs-Tipo-check"
+              autoComplete="Tipo"
+              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            >
+              <option value="" disabled selected hidden>
+                Tipo
+              </option>
+              <option value="dni">DNI</option>
+              <option value="pasaporte">Pasaporte</option>
+            </select>
+            <label className="sr-only">Número de documento</label>
+            <input
+              type="text"
+              name="NumeroDeDocumento"
+              id="hs-phone-number"
+              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              placeholder="Número de documento"
+            />
+          </div>
+          <label className="sr-only">Ingrese Email</label>
           <input
-            type="text"
-            name="nombre"
-            id="hs-firstname-contacts"
+            type="email"
+            name="email"
+            id="hs-email-contacts"
+            autoComplete="email"
             className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-            placeholder="Nombre"
+            placeholder="Ingrese Email"
           />
-          <label className="sr-only">Apellido</label>
+
+          <label className="sr-only">Confirmar Email</label>
           <input
-            type="text"
-            name="apellido"
-            id="hs-lastname-contacts"
+            type="email"
+            name="confirmarEmail"
+            id="hs-email-contacts"
+            autoComplete="email"
             className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-            placeholder="Apellido"
+            placeholder="Confirmar Email"
           />
-        </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <label className="sr-only">Tipo</label>
-          <select
-            name="tipo"
-            id="hs-Tipo-check"
-            autoComplete="Tipo"
-            className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-          >
-            <option value="" disabled selected hidden>
-              Tipo
-            </option>
-            <option value="dni">DNI</option>
-            <option value="pasaporte">Pasaporte</option>
-          </select>
-          <label className="sr-only">Número de documento</label>
+          <label className="sr-only">Número de teléfono</label>
           <input
-            type="text"
-            name="NumeroDeDocumento"
+            type="tel"
+            name="numerodetelefono"
             id="hs-phone-number"
             className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-            placeholder="Número de documento"
+            placeholder="Número de teléfono"
+          />
+          <label className="sr-only">Número de teléfono particular</label>
+          <input
+            id="hs-about-contacts"
+            name="numerodetelefonoparticular"
+            className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            placeholder="Número de teléfono particular"
           />
         </div>
-        <label className="sr-only">Ingrese Email</label>
-        <input
-          type="email"
-          name="email"
-          id="hs-email-contacts"
-          autoComplete="email"
-          className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-          placeholder="Ingrese Email"
-        />
 
-        <label className="sr-only">Confirmar Email</label>
-        <input
-          type="email"
-          name="confirmarEmail"
-          id="hs-email-contacts"
-          autoComplete="email"
-          className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-          placeholder="Confirmar Email"
-        />
-        <label className="sr-only">Número de teléfono</label>
-        <input
-          type="tel"
-          name="numerodetelefono"
-          id="hs-phone-number"
-          className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-          placeholder="Número de teléfono"
-        />
-        <label className="sr-only">Número de teléfono particular</label>
-        <input
-          id="hs-about-contacts"
-          name="numerodetelefonoparticular"
-          className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-          placeholder="Número de teléfono particular"
-        />
+        <div className="flex grid gap-4">
+          <h1 className="text-balance text-center font-gotham text-xl tracking-tight text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight">
+            Datos Propiedad
+          </h1>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <label className="sr-only">Calle</label>
+            <input
+              type="text"
+              name="calle"
+              id="hs-firstname-contacts"
+              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              placeholder="Calle"
+            />
+            <label className="sr-only">Número</label>
+            <input
+              type="number"
+              name="numero"
+              id="hs-lastname-contacts"
+              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              placeholder="Número"
+            />
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <label className="sr-only">Departamento</label>
+            <input
+              type="text"
+              name="departamento"
+              id="hs-phone-number"
+              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              placeholder="Departamento"
+            />
+
+            <label className="sr-only">Piso</label>
+            <input
+              type="text"
+              name="piso"
+              id="hs-phone-number"
+              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              placeholder="piso"
+            />
+          </div>
+          <label className="sr-only">Localidad</label>
+          <input
+            type="text"
+            name="localidad"
+            id="hs-email-contacts"
+            className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            placeholder="Localidad"
+          />
+
+          <label className="sr-only">Partido</label>
+          <input
+            type="text"
+            name="partido"
+            id="hs-email-contacts"
+            className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            placeholder="Partido"
+          />
+
+          <label className="sr-only">Provincia</label>
+          <input
+            type="text"
+            name="provincia"
+            id="hs-email-contacts"
+            className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            placeholder="Provincia"
+          />
+
+          <label className="sr-only">Código de contrato de fianza</label>
+          <input
+            type="tel"
+            name="codigocontrato"
+            id="hs-phone-number"
+            className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            placeholder="Código de contrato de fianza"
+          />
+          <label className="sr-only">Súgerencia</label>
+          <input
+            id="hs-about-contacts"
+            name="sugerencia"
+            className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            placeholder="Súgerencia"
+          />
+          <label className="sr-only">Detalle</label>
+          <input
+            id="hs-about-contacts"
+            name="detalle"
+            className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            placeholder="Detalle"
+          />
+          <label className="sr-only">Inmobiliaria</label>
+          <input
+            id="hs-about-contacts"
+            name="inmobiliaria"
+            className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            placeholder="Inmobiliaria"
+          />
+        </div>
+
+        <div className="flex grid gap-4">
+          <h1 className="text-balance text-center font-gotham text-xl tracking-tight text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight">
+            Datos Inquilino
+          </h1>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <label className="sr-only">Nombre</label>
+            <input
+              type="text"
+              name="nombre"
+              id="hs-firstname-contacts"
+              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              placeholder="Nombre"
+            />
+            <label className="sr-only">Apellido</label>
+            <input
+              type="text"
+              name="apellido"
+              id="hs-lastname-contacts"
+              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              placeholder="Apellido"
+            />
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <label className="sr-only">Tipo</label>
+            <select
+              name="tipo"
+              id="hs-Tipo-check"
+              autoComplete="Tipo"
+              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            >
+              <option value="" disabled selected hidden>
+                Tipo
+              </option>
+              <option value="dni">DNI</option>
+              <option value="pasaporte">Pasaporte</option>
+            </select>
+            <label className="sr-only">Número de documento</label>
+            <input
+              type="text"
+              name="NumeroDeDocumento"
+              id="hs-phone-number"
+              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              placeholder="Número de documento"
+            />
+          </div>
+        </div>
       </div>
 
-      <div className="mt-4 grid">
+      <div className="mt-8 flex justify-center">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent bg-yellow-400 px-4 py-3 font-gotham text-sm text-neutral-700 outline-none ring-zinc-500 transition duration-300 hover:bg-yellow-500 focus-visible:ring disabled:pointer-events-none disabled:opacity-50 dark:text-white dark:ring-zinc-200 dark:focus:outline-none 2xl:text-base"
+          className="inline-flex w-[100%] items-center justify-center gap-x-2 rounded-lg border border-transparent bg-yellow-400 px-4 py-3 font-gotham text-sm text-neutral-700 outline-none ring-zinc-500 transition duration-300 hover:bg-yellow-500 focus-visible:ring disabled:pointer-events-none disabled:opacity-50 dark:text-white dark:ring-zinc-200 dark:focus:outline-none md:w-[30%] 2xl:text-base"
         >
           Enviar Mail
         </button>
