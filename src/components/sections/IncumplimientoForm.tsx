@@ -13,10 +13,54 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const { nombre, apellido, email, numerodetelefono, consulta } =
-      Object.fromEntries(formData);
+    const {
+      nombre,
+      apellido,
+      email,
+      confirmarEmail,
+      numerodetelefono,
+      consulta,
+      tipo,
+      numerodocumento,
+      numerodetelefonoparticular,
+      calle,
+      numero,
+      departamento,
+      piso,
+      localidad,
+      partido,
+      provincia,
+      codigocontrato,
+      sugerencia,
+      detalle,
+      inmobiliaria,
+      nombreinquilino,
+      apellidoinquilino,
+      tipoinquilino,
+      numerodocumentoinquilino,
+    } = Object.fromEntries(formData);
 
-    if (!nombre || !apellido || !email || !numerodetelefono || !consulta) {
+    if (
+      !nombre ||
+      !apellido ||
+      !email ||
+      !numerodetelefono ||
+      !tipo ||
+      !numerodocumento ||
+      !confirmarEmail ||
+      !numerodetelefonoparticular ||
+      !calle ||
+      !numero ||
+      !localidad ||
+      !partido ||
+      !provincia ||
+      !codigocontrato ||
+      !inmobiliaria ||
+      !nombreinquilino ||
+      !apellidoinquilino ||
+      !tipoinquilino ||
+      !numerodocumentoinquilino
+    ) {
       setHandleAlert(true);
       setIsSubmitting(false);
       return;
@@ -36,11 +80,39 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
           from: `incumplimiento@sinergiavalores.com`,
           to: "incumplimiento@sinergiavalores.com",
           subject: `Incumplimiento de parte de ${nombre} ${apellido}`,
-          html: `<ul>
+          html: `
+          <div>
+          <h2>Datos Propietario</h2>
+          <ul>
+            <li>Nombre Completo: ${nombre} ${apellido}</li>
             <li>Email: ${email}</li>
             <li>Número de teléfono: ${numerodetelefono}</li>
-            <li>Consulta: ${consulta}</li>
-          </ul>`,
+            <li>Número de telefono particular: ${numerodetelefonoparticular}</li>
+            <li>Tipo: ${tipo}</li>
+            <li>Número de documento/Pasaporte: ${numerodocumento}</li>
+          </ul>
+          <h2>Datos Propiedad</h2>
+          <ul>
+            <li>Calle: ${calle}</li>
+            <li>Número: ${numero}</li>
+            <li>Departamento: ${departamento}</li>
+            <li>Piso: ${piso}</li>
+            <li>Localidad: ${localidad}</li>
+            <li>Partido: ${partido}</li>
+            <li>Provincia: ${provincia}</li>
+            <li>Código de contrato: ${codigocontrato}</li>
+            <li>Sugerencia: ${sugerencia}</li>
+            <li>Detalle: ${detalle}</li>
+            <li>Inmobiliaria: ${inmobiliaria}</li>
+          </ul>
+          <h2>Datos Inquilino</h2>
+          <ul>
+            <li>Nombre Completo: ${nombreinquilino} ${apellidoinquilino}</li>
+            <li>Tipo: ${tipoinquilino}</li>
+            <li>Número de documento: ${numerodocumentoinquilino}</li>
+          </ul>
+          </div>
+          `,
           reply_to: email,
         }),
       });
@@ -123,7 +195,7 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
             <label className="sr-only">Número de documento</label>
             <input
               type="text"
-              name="NumeroDeDocumento"
+              name="numerodocumento"
               id="hs-phone-number"
               className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
               placeholder="Número de documento"
@@ -183,7 +255,7 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
               type="number"
               name="numero"
               id="hs-lastname-contacts"
-              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              className="hide-number-arrows block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
               placeholder="Número"
             />
           </div>
@@ -272,7 +344,7 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
             <label className="sr-only">Nombre</label>
             <input
               type="text"
-              name="nombre"
+              name="nombreinquilino"
               id="hs-firstname-contacts"
               className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
               placeholder="Nombre"
@@ -280,7 +352,7 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
             <label className="sr-only">Apellido</label>
             <input
               type="text"
-              name="apellido"
+              name="apellidoinquilino"
               id="hs-lastname-contacts"
               className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
               placeholder="Apellido"
@@ -289,7 +361,7 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <label className="sr-only">Tipo</label>
             <select
-              name="tipo"
+              name="tipoinquilino"
               id="hs-Tipo-check"
               autoComplete="Tipo"
               className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
@@ -302,17 +374,17 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
             </select>
             <label className="sr-only">Número de documento</label>
             <input
-              type="text"
-              name="NumeroDeDocumento"
+              type="number"
+              name="numerodocumentoinquilino"
               id="hs-phone-number"
-              className="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              className="hide-number-arrows block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-nunito text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
               placeholder="Número de documento"
             />
           </div>
         </div>
       </div>
 
-      <div className="mt-8 flex justify-center">
+      <div className="mt-16 flex justify-center">
         <button
           type="submit"
           disabled={isSubmitting}
