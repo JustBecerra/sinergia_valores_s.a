@@ -33,8 +33,8 @@ export const IncumplimientoForm = ({ formSubTitle }: Props) => {
         },
         body: JSON.stringify({
           // from: `${email}`,
-          from: `contacto@sinergiavalores.com`,
-          to: "contacto@sinergiavalores.com",
+          from: `incumplimiento@sinergiavalores.com`,
+          to: "incumplimiento@sinergiavalores.com",
           subject: `Consulta de parte de ${nombre} ${apellido}`,
           html: `<ul>
             <li>Email: ${email}</li>
