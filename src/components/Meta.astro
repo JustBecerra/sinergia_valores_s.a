@@ -75,7 +75,8 @@ const appleTouchIcon = await getImage({
 }
 <!-- Define the character set, description, author, and viewport settings -->
 <meta charset="utf-8" />
-<meta content={meta} name="description" />
+<meta content={meta || SITE.description} name="description" />
+<meta name="robots" content="index, follow" />
 <meta name="web_author" content={author} />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
