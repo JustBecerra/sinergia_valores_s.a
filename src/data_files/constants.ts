@@ -7,7 +7,7 @@ export const SITE = {
     "Garantiza tu futuro hogar en segundos - Solicita una fianza con nosotros.",
   description_short: "Garantiza tu futuro hogar en segundos.",
   url: "https://www.sinergiavalores.com",
-  author: "Justo Becerra",
+  author: "Justo Becerra Y Nico De Caroli :)",
 };
 
 export const SEO = {
@@ -16,7 +16,7 @@ export const SEO = {
   structuredData: {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    inLanguage: "en-US",
+    inLanguage: "es-AR",
     "@id": SITE.url,
     url: SITE.url,
     name: SITE.title,
@@ -59,7 +59,13 @@ export const questionsFrecuentes = [
     question:
       "¿QUE DOCUMENTACIÓN ES NECESARIA PARA APLICAR EN EL SISTEMA DE FIANZAS PARA ALQUILER DE SINERGIA VALORES S.A.?",
     answer:
-      "EN LA OPCIÓN DE REQUISITOS SE ENCUENTRA LA DOCUMENTACIÓN NECESARIA PARA EMPLEADOS, MONOTRIBUTISTAS, RESPONSABLES INSCRIPTOS PERSONA FÍSICA Y PERSONAS JURÍDICAS. (VÍNCULO REQUISITOS)",
+      `EN LA OPCIÓN DE REQUISITOS SE ENCUENTRA LA DOCUMENTACIÓN NECESARIA PARA EMPLEADOS, MONOTRIBUTISTAS, RESPONSABLES INSCRIPTOS PERSONA FÍSICA Y PERSONAS JURÍDICAS. <a 
+            href="/files/REQUISITOS.pdf" 
+            download 
+            class="text-balance font-gotham text-neutral-800 hover:text-neutral-500 dark:text-neutral-200 dark:hover:text-neutral-400"
+          >
+            Descargar Requisitos
+          </a>`,
   },
   {
     question: "¿QUE ES UN CO-GARANTE?",
@@ -160,10 +166,6 @@ export const questionsFrecuentes = [
     answer: `LOS INQUILINOS SON ANALIZADOS DE MANERA EXHAUSTIVA EN MATERIA FINANCIERA Y DE HISTORIAL CREDITICIO, POR LO QUE TIENEN RECORD FINANCIERO OPTIMO. A SU VEZ SINERGIA VALORES S.A. PROVEE LIQUIDEZ INMEDIATA EN CASO INCUMPLIMIENTOS POR PARTE DEL INQUILINO HASTA LA RESTITUCION DEL BIEN. EL EQUIPO DE SINERGIA VALORES S.A. SE HACE CARGO DE EL PROCEDIMIENTO SIN GASTOS PARA LA INMOBILIARIA NI PROPIETARIO`,
   },
   {
-    question: "¿ES POSIBLE COORDINAR UNA REUNION?",
-    answer: `SI, COORDINAMOS UNA REUNION PRESENCIAL O VIA ZOOM. EN CASO DE SER PRESENCIAL, ES POSIBLE COORDINARLAS EN LA INMOBILIARIA O EN NUESTRAS OFICINAS.`,
-  },
-  {
     question: "¿SE UTILIZA EL MISMO MODELO DE CONTRATO DE ALQUILER?",
     answer: `SI, EL EQUIPO DE SIENRGIA VALORES S.A. SE COMUNICA CON LA INMOBILIARIA PARA AGILIZAR EL PROCEDIMIENTO A PARTIR DE UNA CLAUSUAL ANEXO, LA CUAL FORMA PARTE DEL CONTRATO DE FIANZA Y SE INCORPORA AL CONTRATO DE ALQUILER.`,
   },
@@ -179,7 +181,7 @@ export const questionsFrecuentes = [
 ];
 
 export const OG = {
-  locale: "en_US",
+  locale: "es_AR",
   type: "website",
   url: SITE.url,
   title: `${SITE.title}`,
