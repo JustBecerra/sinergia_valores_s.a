@@ -25,7 +25,7 @@ const arrepentimiento: string = "Arrepentimiento";
         <div class="col-span-1">
           <h3 class="font-gotham text-neutral-800 dark:text-neutral-200">{section.section}</h3>
           <ul
-            class={`mt-3 flex w-fit ${section.section === "Servicios" && "flex-col"} ${section.section === "Redes Sociales" && "flex-wrap"} gap-4 lg:flex-row`}
+            class={`mt-3 flex w-fit ${section.section === "Servicios" && "flex-col"} ${section.section === "Redes Sociales" && "flex-wrap"} ${section.section === "Información" && "flex-col"} gap-4`}
           >
             {section.links.map((link) => (
               <li>
