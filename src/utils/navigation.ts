@@ -24,6 +24,23 @@ const footerLinks = [
     ],
   },
   {
+    section: "Información",
+    links: [
+      {
+        name: "Términos y Condiciones",
+        url: "/files/terminosycondiciones.pdf",
+      },
+      {
+        name: "Contrato de adhesión",
+        url: "/files/contrato.pdf",
+      },
+      {
+        name: "Requisitos",
+        url: "/files/REQUISITOS.pdf",
+      },
+    ],
+  },
+  {
     section: "Servicios",
     links: [
       { name: "Ayuda", url: "/ayuda" },

@@ -8,9 +8,26 @@ type Props = {
 
 export const SolicitudForm = ({ formSubTitle }: Props) => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!isChecked) {
+      toast.warn("Debe aceptar los términos y condiciones para continuar.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+      return;
+    }
+
     const formData = new FormData(e.currentTarget);
     const {
       nombre,
@@ -236,6 +253,31 @@ export const SolicitudForm = ({ formSubTitle }: Props) => {
           <option value="redes sociales">Redes Sociales</option>
           <option value="otros">Otros</option>
         </select>
+      </div>
+
+      {/* Enlace a Términos y Condiciones y Checkbox */}
+      <div className="mt-4 flex items-center">
+        <input
+          type="checkbox"
+          id="terms"
+          name="terms"
+          checked={isChecked}
+          onChange={(e) => setIsChecked(e.target.checked)}
+          className="h-4 w-4 rounded border-gray-300 text-yellow-400 focus:ring-yellow-500"
+        />
+        <label
+          htmlFor="terms"
+          className="ml-2 block text-sm text-neutral-600 dark:text-neutral-400"
+        >
+          He leído y acepto los{" "}
+          <a
+            href="/files/terminosycondiciones.pdf"
+            target="_blank"
+            className="text-yellow-400 hover:underline"
+          >
+            Términos y Condiciones
+          </a>
+        </label>
       </div>
 
       {/* Botón de Envío */}
