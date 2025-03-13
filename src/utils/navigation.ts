@@ -32,7 +32,7 @@ const footerLinks = [
       },
       {
         name: "Contrato de adhesión",
-        url: "/files/contrato.pdf",
+        url: "/files/Contrato.pdf",
       },
       {
         name: "Requisitos",
