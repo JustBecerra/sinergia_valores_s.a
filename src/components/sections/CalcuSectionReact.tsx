@@ -18,19 +18,18 @@ const calcularResultado = (
   duracionAlquiler: number,
 ): CalculationResult => {
   let total = 0;
-
   switch (tipoAlquiler) {
     case "temporal":
-      total = (rent + expenses) * duracionAlquiler * 0.07;
+      total = (rent + expenses) * duracionAlquiler * 0.05;
       break;
     case "residencial":
-      total = (rent + expenses) * duracionAlquiler * 0.07;
+      total = (rent + expenses) * duracionAlquiler * 0.05;
       break;
     case "comercial":
-      total = (rent + expenses) * duracionAlquiler * 0.07;
+      total = (rent + expenses) * duracionAlquiler * 0.05;
       break;
     default:
-      total = (rent + expenses) * 0.07;
+      total = (rent + expenses) * 0.05;
   }
 
   const locale = "es-AR";
@@ -38,9 +37,8 @@ const calcularResultado = (
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   });
-
   const resultadoNormal = numberFormatter.format(total);
-  const resultadoMenosDiezPorciento = numberFormatter.format(total * 0.9);
+  const resultadoMenosDiezPorciento = numberFormatter.format(total * 0.85);
   const anticipo25 = numberFormatter.format(total * 0.25);
   const cuota25 = numberFormatter.format((total * 0.75) / 3);
   const anticipo50 = numberFormatter.format(total * 0.5);
@@ -235,13 +233,14 @@ const CalcuSectionReact: React.FC = () => {
           {/* Tarjeta 1: 10% OFF */}
           <div className="dark:bg-yellow-600 flex flex-1 flex-col rounded-lg bg-yellow-500 p-8 text-center text-black shadow-lg">
             <div className="flex h-full flex-col">
+              {" "}
               <h2 className="mb-4 text-3xl font-bold">
-                10% OFF - Pago contado
+                15% OFF - Pago contado
               </h2>
               <div id="result10Off" className="my-4 text-5xl font-semibold">
                 ${resultados.resultadoMenosDiezPorciento}
               </div>
-              <p className="text-lg">(con 10% de descuento incluido)</p>
+              <p className="text-lg">(con 15% de descuento incluido)</p>
               <hr className="my-4 border-gray-200 dark:border-gray-700" />
               <div className="mt-4 flex-1 space-y-3 text-base">
                 <p className="flex items-center justify-between">
@@ -249,15 +248,15 @@ const CalcuSectionReact: React.FC = () => {
                     Costo original del Servicio:
                   </span>
                   <span id="costoOriginal">${resultados.resultadoNormal}</span>
-                </p>
+                </p>{" "}
                 <p className="flex items-center justify-between">
-                  <span className="font-medium">Descuento 10%:</span>
+                  <span className="font-medium">Descuento 15%:</span>
                   <span id="descuentoValor">
                     $
                     {new Intl.NumberFormat("es-AR", {
                       minimumFractionDigits: 0,
                       maximumFractionDigits: 0,
-                    }).format(resultados.total * 0.1)}
+                    }).format(resultados.total * 0.15)}
                   </span>
                 </p>
                 <p className="flex items-center justify-between">
