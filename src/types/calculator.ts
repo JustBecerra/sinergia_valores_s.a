@@ -12,19 +12,18 @@ export function calcularResultado(
   cuota50: string;
 } {
   let total = 0;
-
   switch (tipoAlquiler) {
     case "temporal":
-      total = (rent + expenses) * 6 * 0.07;
+      total = (rent + expenses) * 6 * 0.05;
       break;
     case "residencial":
-      total = (rent + expenses) * duracionAlquiler * 0.07;
+      total = (rent + expenses) * duracionAlquiler * 0.05;
       break;
     case "comercial":
-      total = (rent + expenses) * duracionAlquiler * 0.07;
+      total = (rent + expenses) * duracionAlquiler * 0.05;
       break;
     default:
-      total = (rent + expenses) * 0.07; // Default case if type doesn't match
+      total = (rent + expenses) * 0.05; // Default case if type doesn't match
   }
 
   const locale = "es-AR";
@@ -38,9 +37,8 @@ export function calcularResultado(
 
   // Resultado normal
   const resultadoNormal = numberFormatter.format(total);
-
-  // Resultado -10%
-  const resultadoMenosDiezPorciento = numberFormatter.format(total * 0.9);
+  // Resultado -15%
+  const resultadoMenosDiezPorciento = numberFormatter.format(total * 0.85);
 
   // 25% Anticipo + 3 cuotas
   const anticipo25 = numberFormatter.format(total * 0.25);
