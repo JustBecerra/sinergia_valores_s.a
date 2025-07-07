@@ -28,6 +28,9 @@ const calcularResultado = (
     case "comercial":
       total = (rent + expenses) * duracionAlquiler * 0.05;
       break;
+    case "renovacion":
+      total = (rent + expenses) * duracionAlquiler * 0.045;
+      break;
     default:
       total = (rent + expenses) * 0.05;
   }
@@ -178,6 +181,7 @@ const CalcuSectionReact: React.FC = () => {
                     <option value="temporal">Temporal</option>
                     <option value="residencial">Residencial</option>
                     <option value="comercial">Comercial</option>
+                    <option value="renovacion">Renovación</option>
                   </select>
                 </div>
                 <div>
