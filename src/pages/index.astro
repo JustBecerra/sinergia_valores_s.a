@@ -20,6 +20,8 @@ import calcuEle from "@images/calcuEle.jpeg";
 import familiaEle from "@images/familiaEle.jpeg";
 import casaEle from "@images/casaEle.jpeg";
 import { fade } from "astro:transitions";
+import UpdateBanner from "@components/sections/UpdateBanner.astro";
+import updates from "@data/updates.json";
 ---
 <meta name="google-site-verification" content="Op6aoDLtTX-3du-rvTUIEHfc0I4vjVlcnWxIG0HvGYk" />
 <MainLayout>
@@ -94,6 +96,8 @@ import { fade } from "astro:transitions";
         },
       ]}
     />
+
+    <UpdateBanner date={updates.date} items={updates.items} />
 
     <FAQ title="Preguntas Frecuentes" faqs={faqs} />
 
