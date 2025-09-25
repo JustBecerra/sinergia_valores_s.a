@@ -1,5 +1,15 @@
 ---
 const { date = "1° de octubre 2025", items = [] } = Astro.props;
+
+interface UpdateItem {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  date?: string;
+  items?: UpdateItem[];
+}
 ---
 
 <section role="region" aria-label="Actualización de alquileres" class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
@@ -23,7 +33,7 @@ const { date = "1° de octubre 2025", items = [] } = Astro.props;
 
     <!-- Content Grid -->
     <div class="grid gap-6 xl:gap-8 2xl:gap-10 md:grid-cols-2 lg:grid-cols-4">
-      {items.map(item => (
+      {items.map((item: UpdateItem) => (
         <div class="rounded-lg border border-neutral-200 bg-neutral-50 p-4 xl:p-6 2xl:p-8 text-center dark:border-neutral-700 dark:bg-neutral-800">
           <div class="font-gotham text-2xl xl:text-3xl 2xl:text-4xl font-bold text-yellow-500 dark:text-yellow-400">
             {item.value}
