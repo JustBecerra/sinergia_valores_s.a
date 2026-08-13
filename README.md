@@ -1,6 +1,6 @@
 Como levantar el proyecto:
-1 - npm install
-2 - npm start
+1 - pnpm install
+2 - pnpm start
 
 Crear una branch antes de comenzar una tarea:
 1 - git checkout -b nombredelarama
